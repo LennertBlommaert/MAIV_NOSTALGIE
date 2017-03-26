@@ -2,14 +2,15 @@
 
 import React from 'react';
 import {render} from 'react-dom';
-import App from './containers/App';
+import InfluenceMeterApp from './containers/InfluenceMeterApp';
 
 const init = () => {
 
   render(
-    <App  />,
-    document.querySelector(`.react-mount`)
+    <InfluenceMeterApp  />,
+    document.querySelector(`.influenceMeterApp-react-mount`)
   );
+
 
 };
 

@@ -1,9 +1,28 @@
 @import 'reset';
 
+:root {
+  --dark-grey: #282828;
+  --pink: #ff6174;
+}
+
+/*---------
+  GENERAL
+----------*/
+
 body {
   font-family: Roboto;
   font-size: 1.6rem;
-  margin: 2rem;
+}
+
+strong { font-weight: bold; }
+
+.highlighted { color: var(--pink); }
+
+.hidden { display: none; }
+
+.center {
+  width: 98rem;
+  margin: 0 auto;
 }
 
 header {
@@ -12,4 +31,39 @@ header {
 
 h1 {
   font-size: 3rem;
+}
+
+/*--------
+  FOOTER
+---------*/
+
+.footer {
+  color: white;
+  background: var(--dark-grey);
+  padding: 5rem 6.5rem;
+
+  &-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  & .logo-link {
+    margin: 0 auto;
+    width: 10rem;
+    height: 10rem;
+    display: block;
+    background: url(../assets/img/logo.png) no-repeat;
+    mix-blend-mode: luminosity;
+
+    &:hover { mix-blend-mode: normal; }
+  }
+
+  & .copyright {
+    margin-top: 3rem;
+  }
+}
+
+.social-media-buttons-list {
+  display: flex;
 }
