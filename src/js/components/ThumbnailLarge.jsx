@@ -31,7 +31,7 @@ class ThumbnailLarge extends Component {
     const handleClick = () => onThumbnailClick(id);
 
     return connectDragSource(
-      <li onClick={handleClick} style={{
+      <li className='meter-unselected-artist' onClick={handleClick} style={{
         opacity: isDragging ? 0.5 : 1,
         cursor: `move`
       }}>

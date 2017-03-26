@@ -4,7 +4,7 @@ import ThumbnailLargeSC from './ThumbnailLarge';
 const Thumbnails = ({artists, onThumbnailClick: handleOnThumbnailClick}) => {
 
   return (
-      <ul>
+      <ul className='meter-unselected-artists'>
 
         {
 

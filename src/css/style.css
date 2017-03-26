@@ -33,6 +33,72 @@ h1 {
   font-size: 3rem;
 }
 
+/*-----------------
+       MAIN
+------------------*/
+
+/* MUSE */
+
+.infographic-img {
+  width: 55.9rem;
+  height: 81.9rem;
+}
+
+.infographic-img-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55.9rem;
+  height: 81.9rem;
+}
+
+.hotspot {
+  opacity: .5;
+  cursor: pointer;
+  transition: opacity .5s ease;
+
+  &:hover {
+    opacity: .08;
+  }
+}
+
+/* STORY */
+
+.story-content {
+  display: flex;
+}
+
+.case {
+  display: flex;
+  align-items: center;
+  margin: 10rem 0 12rem;
+}
+
+/* Influence meter */
+
+.meter {
+
+  &-unselected-artists {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &-unselected-artist {
+
+    position: relative;
+
+    & span {
+      position: absolute;
+      color: white;
+    }
+  }
+
+}
+
 /*--------
   FOOTER
 ---------*/
