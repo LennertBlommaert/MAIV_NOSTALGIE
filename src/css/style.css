@@ -66,7 +66,9 @@ h1 {
   }
 }
 
-/* STORY */
+/*
+  STORY
+*/
 
 .story-content {
   display: flex;
@@ -78,7 +80,47 @@ h1 {
   margin: 10rem 0 12rem;
 }
 
-/* Influence meter */
+/* Albums */
+
+.album {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-header {
+    height: 2rem;
+    transform: rotate(270deg);
+  }
+}
+
+.album-cover-container {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+
+  & svg {
+    top: .8rem;
+    right: .8rem;
+    position: absolute;
+  }
+}
+
+.album-audio-sample {
+  position: absolute;
+  width: 100%;
+}
+
+.album-cover {
+  filter: grayscale(1);
+
+  &:hover {
+    filter: none;
+  }
+}
+
+/*
+  INFLUENCE METER
+*/
 
 .meter {
 
@@ -90,13 +132,25 @@ h1 {
   &-unselected-artist {
 
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 5.5rem;
 
     & span {
       position: absolute;
+      bottom: 1rem;
       color: white;
     }
   }
 
+  & .bar {
+    display: flex;
+    width: 72rem;
+    height: 6.6rem;
+    border: .3rem solid black;
+    margin-bottom: 3.8rem;
+  }
 }
 
 /*--------
@@ -107,6 +161,7 @@ h1 {
   color: white;
   background: var(--dark-grey);
   padding: 5rem 6.5rem;
+  margin-top: 32.2rem;
 
   &-content {
     display: flex;

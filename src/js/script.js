@@ -5,6 +5,7 @@ import {render} from 'react-dom';
 import InfluenceMeterApp from './containers/InfluenceMeterApp';
 import imageViewer from './lib/imageViewer';
 import infographic from './lib/infographic';
+import audioPlayer from './lib/audioPlayer';
 
 const init = () => {
 
@@ -15,6 +16,12 @@ const init = () => {
   }
 
   infographic(`assets/data/features.csv`);
+
+  const $audioTags = document.querySelectorAll(`.album`);
+
+  for (let i = 0;i < $audioTags.length;i ++) {
+    audioPlayer($audioTags[i]);
+  }
 
   render(
     <InfluenceMeterApp  />,
