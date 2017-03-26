@@ -3,9 +3,11 @@
 <head>
 
   <meta charset="UTF-8">
-  <title>Hello, MAIV_NOSTALGIE</title>
+  <title>Nico a Tribute</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+  <meta name="author" content="Emile Adam, Lennert Blommaert">
+  <meta name="description" content="Nico is known for her time as a vocalist in the Velvet Underground’s debut, but she was also a composer,  fashion model, actress and above all, a big influence on several of the greatest artistic talents of her time. See how a generation of artists was smitten with her, and how she became an generations to come on this tribute page.">
+  <meta name="keywords" content="nostalgie, radio, tribute, remembering, nico">
   <script>
 
     WebFontConfig = {
@@ -23,13 +25,147 @@
     })(document);
 
   </script>
-  
+
 
 </head>
 
 <body>
 
-  
+  <header class="header">
+
+    <video width="1280" height="600" poster="assets/img/nico_header.jpg">
+      <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4"/>
+    </video>
+
+    <article class="header-content">
+      <h1 class="header-title">
+        Nico
+      </h1>
+      <article class="header-intro">
+        <p>
+          It has been almost 30 years since Christa Päffgen - better known as Nico - died at the age of 49. She is known for her time as a vocalist in the Velvet Underground’s debut, but she was also a composer,  fashion model, actress and above all, a big <strong>influence</strong> on several of the greatest <stronh>artistic talents</strong> of her time.
+        </p>
+        <p>
+          See how a generation of artists was smitten with her, and how she became an <strong>icon</strong> for generations to come.
+        </p>
+      </article>
+    </article>
+
+    <!-- ARROW+RECT AS SVG - OR - DIV with BACKGROUNDCOLOR ROTATED WITH ARROW.SVG AS CHILD -->
+
+  </header>
+
+  <main class="body">
+
+    <section class="muse">
+
+      <header class="muse-header">
+        <h2 class="muse-sub-title">Nico</h2>
+        <h1 class="muse-title">The Muse</h1>
+        <p class="muse-intro">
+          Nico has <strong class="highlighted">inspired</strong> and <strong class="highlighted">influenced</strong> many legendary artist over the years.  From the best fashion designers in Berlin and Paris, to film makers, conceptual artists and musicians.
+        </p>
+      </header>
+
+      <article class="infographic">
+        <!--
+          <p class="infographic-intro">
+            Hover over the the image to discover why Nico had such a huge influence on so many people from diffferent artistic schools
+          </p>
+        -->
+        <div class="infographic-content">
+
+          <ul class="infographic-icons-list">
+            <li class="infographic-icons-list-item"></li>
+          </ul>
+
+          <p class="infogrpahic-description">Hover over the the image to discover why Nico had such a huge influence on so many people from diffferent artistic schools</p>
+
+          <img src="assets/img/nico_collage.jpg" alt="Muse collage" />
+
+        </div>
+      </article>
+
+    </section>
+
+    <section class="story">
+
+      <header class="story-header">
+        <h1 class="muse-title">Nico's story</h1>
+        <h2 class="muse-sub-title">And her influence as a muse</h2>
+        <svg width="75" height="20"
+            xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="75" height="20" fill="#ff6174" />
+        </svg>
+      </header>
+
+      <section class="part_1">
+
+        <article class="intro">
+          <article class="intro-content">
+            <p>
+              Nico was born the October 16th 1938 in Cologne, Germany. During the war, in which she lost her father due to sustained head injuries that caused severe brain damage, Nico moved to Spreewald forest outside of Berlin together with her family.
+            </p>
+            <p>
+              She was discovered at 16 by the photographer Herbert Tobias while both were working at a KaDeWe fashion show in Berlin. He gave her the name Nico after her ex-boyfriend, filmmaker Nikos Papatakis, and she used it for the rest of her life.
+            </p>
+            <p>
+              She moved to Paris and began working for a vast amount of fashion magazines such as Vogue, Tempo, Vie Nuove, Mascotte Spettacolo, Camera, Elle, and others..
+            </p>
+          </article>
+
+          <img class="intro-collage" src="assets/img/part_1_collage.jpg" width="424" height="471" alt="Parijs, Berlijn, Camera" />
+        </article>
+
+        <article class="case coco-chanel" id="coco-chanel">
+
+          <img src="assets/img/coco_chanel_1.jpg" width="430" height="420" alt="Nico &amp; Coco Chanel" />
+
+          <div class="case-content">
+
+            <header class="case-header">
+              <h2 class="case-sub-title">Nico &amp;</h2>
+              <h1 class="case-title">Coco Chanel</h1>
+            </header>
+
+            <div class="case-description">
+              <p>
+                Nico has been beautiful since she was a child.
+                After moving to Paris she also got noticed soon by the famous <strong>Coco Chanel</strong>, Coco Chanel took personal interest in her androgynous <strong>protégee</strong> as she was very inspired by her beauty.
+              </p>
+              <p>
+                To further her career and to <strong/>escape</strong> Chanel’s attentions, Nico fled to <strong>New York City</strong> and abandoned the job.
+              </p>
+            </div>
+
+          </div>
+
+        </article>
+
+      </section>
+
+    </section>
+
+    <section class="meter">
+
+      <header class="meter-header">
+        <h1 class="meter-title">
+          Nico <span class="highlighted">influence meter</span>
+        </h1>
+        <h2 class="meter-sub-title">How much has nico influenced you through other artists?</h2>
+      </header>
+
+      <article class="influence-meter"></article>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="classic-stories">
+      Luister naar meer verhalen <br/> van legendes op onze <a target="_blank" href="http://www.nostalgie.eu/nl/programmas/classic-stories/">Classic Stories</a>
+    </p>
+  </footer>
+
   <div class='react-mount'>
 
   </div>
