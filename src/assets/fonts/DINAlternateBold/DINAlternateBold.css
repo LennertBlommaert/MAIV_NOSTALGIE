@@ -1,0 +1,8 @@
+@font-face {
+  font-family: DIN;
+  src:
+    url(DINAlternateBold.woff2) format('woff2'),
+    url(DINAlternateBold.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

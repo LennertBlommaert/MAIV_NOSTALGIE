@@ -5,12 +5,13 @@ export default $case => {
   const imgFilenames = getImageFilenames(artist);
 
   const $thumbnails = document.createElement(`div`);
+  $thumbnails.classList.add(`case__thumbnails`);
 
   for (let i = 0;i < imgFilenames.length;i ++) {
     $thumbnails.appendChild(createThumbnail(imgFilenames[i], $case));
   }
 
-  const $caseContent = $case.querySelector(`.case-content`);
+  const $caseContent = $case.querySelector(`.case__content`);
   $caseContent.appendChild($thumbnails);
 
 };

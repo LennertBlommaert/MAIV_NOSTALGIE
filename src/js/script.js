@@ -6,6 +6,7 @@ import InfluenceMeterApp from './containers/InfluenceMeterApp';
 import imageViewer from './lib/imageViewer';
 import infographic from './lib/infographic';
 import audioPlayer from './lib/audioPlayer';
+import stickyNav from './lib/stickyNav';
 
 const init = () => {
 
@@ -28,6 +29,9 @@ const init = () => {
     document.querySelector(`.influenceMeterApp-react-mount`)
   );
 
+  stickyNav();
+
 };
+
 
 init();

@@ -15,6 +15,8 @@ const extractCSS = new ExtractTextWebpackPlugin(`css/style.css`);
 
 // change for production build on different server path
 const publicPath = `/`;
+// const publicPath = `/emile.adam/20162017/ma4/tribute/`;
+
 
 const port = 3000;
 
@@ -152,7 +154,10 @@ const config = {
       ifProduction({
         test: /\.(svg|png|jpe?g|gif)$/,
         loader: `image-webpack-loader`,
-        enforce: `pre`
+        enforce: `pre`,
+        options: {
+          bypassOnDebug: true
+        }
       })
 
     ])
@@ -165,7 +170,7 @@ const config = {
 
     ifDevelopment(new HotModuleReplacementPlugin()),
 
-    
+
 
     ifProduction(copy),
     ifProduction(extractCSS),

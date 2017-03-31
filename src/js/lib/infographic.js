@@ -17,7 +17,7 @@ export default url => {
     if (err) throw new Error(err);
 
     const size = 3;
-    const overlay = d3.select(`.overlay`);
+    const overlay = d3.select(`.infographic__overlay`);
 
     overlay.selectAll(`ellipse`)
       .data(data)

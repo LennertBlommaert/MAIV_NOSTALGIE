@@ -2,11 +2,11 @@ import createElementSVG from './createElementSVG.js';
 
 export default $album => {
 
-  const $audio = $album.querySelector(`.album-audio-sample`);
+  const $audio = $album.querySelector(`.album__audio-sample`);
   // Progressive enhancement
   $audio.removeAttribute(`controls`);
 
-  const $albumCoverContainer = $album.querySelector(`.album-cover-container`);
+  const $albumCoverContainer = $album.querySelector(`.album__cover-container`);
   $albumCoverContainer.appendChild(createButtonBackground());
 
   const $svg = $albumCoverContainer.querySelector(`svg`);
@@ -16,7 +16,7 @@ export default $album => {
 
 const onButtonClick = $svg => {
 
-  const $audioTag = $svg.parentNode.querySelector(`.album-audio-sample`);
+  const $audioTag = $svg.parentNode.querySelector(`.album__audio-sample`);
 
   toggleButtonState($svg, $audioTag.paused);
 

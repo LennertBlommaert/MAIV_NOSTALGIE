@@ -12,8 +12,12 @@
 
     WebFontConfig = {
       // https://github.com/typekit/webfontloader/blob/master/README.md
+      custom: {
+          families: ['DINAlternateBold'],
+          urls: ['assets/fonts/DINAlternateBold/DINAlternateBold.css']
+      },
       google: {
-        families: ['Roboto']
+        families: ['Lora']
       }
     };
 
@@ -32,272 +36,924 @@
 <body>
 
   <header class="header">
-
-    <video width="1280" height="600" poster="assets/img/nico_header.jpg">
+    <video class="header__video" width="1920" height="630" poster="assets/img/header.jpg">
       <source src="https://archive.org/download/WebmVp8Vorbis/webmvp8_512kb.mp4" type="video/mp4"/>
     </video>
-
-    <article class="header-content">
-      <h1 class="header-title">
+    <article class="header__content">
+      <h1 class="header__title" data-content='NICO'>
         Nico
       </h1>
-      <article class="header-intro">
-        <p>
-          It has been almost 30 years since Christa Päffgen - better known as Nico - died at the age of 49. She is known for her time as a vocalist in the Velvet Underground’s debut, but she was also a composer,  fashion model, actress and above all, a big <strong>influence</strong> on several of the greatest <stronh>artistic talents</strong> of her time.
-        </p>
-        <p>
-          See how a generation of artists was smitten with her, and how she became an <strong>icon</strong> for generations to come.
-        </p>
-      </article>
+      <p class="header__paragraph">
+        Nico was a composer, singer,  fashion model and actress <br />
+        but above all a muse and inspiration
+      </p>
     </article>
-
-    <!-- ARROW+RECT AS SVG - OR - DIV with BACKGROUNDCOLOR ROTATED WITH ARROW.SVG AS CHILD -->
-
   </header>
 
   <main class="body">
 
-  <section class="muse">
+    <!-- ARROW+RECT AS SVG - OR - DIV with BACKGROUNDCOLOR ROTATED WITH ARROW.SVG AS CHILD -->
+    <div class="scroll-indicator"></div>
 
-    <header class="muse-header">
-      <h2 class="muse-sub-title">Nico</h2>
-      <h1 class="muse-title">The Muse</h1>
-      <p class="muse-intro">
-        Nico has <strong class="highlighted">inspired</strong> and <strong class="highlighted">influenced</strong> many legendary artist over the years.  From the best fashion designers in Berlin and Paris, to film makers, conceptual artists and musicians.
-      </p>
-    </header>
+<!--
+   #MUSE
+-->
+    <section class="muse">
 
-    <article class="infographic">
-      <!--
-        <p class="infographic-intro">
-          Hover over the the image to discover why Nico had such a huge influence on so many people from diffferent artistic schools
-        </p>
-      -->
-      <div class="infographic-content">
+      <div class="muse-left">
 
-        <ul class="infographic-icons-list">
-          <li class="infographic-icons-list-item"></li>
-        </ul>
+        <div class="muse__intro">
+          <header class="muse__header">
+            <h1 class="muse__title">The Muse</h1>
+            <h2 class="muse__subtitle subtitle">Nico</h2>
+          </header>
+        <div class="muse__description">
+            <p class="muse__description--bold">
+            Nico has <strong class="highlighted">inspired</strong> and <strong class="highlighted">influenced</strong> many legendary artist over the years.  From photographers and fashion designers, to film makers, conceptual artists and musicians.
+          </p>
+          <p>
+            She was a composer,  fashion model, actress but above all, she had a great influence on the greatest of her generation.
+          </p>
+        </div>
+        </div>
 
-        <p class="infographic-description">Hover over the the image to discover why Nico had such a huge influence on so many people from diffferent artistic schools</p>
-
-        <div class="infographic-img-container">
-          <img class="infographic-img" src="assets/img/nico_collage.jpg" width="559" height="819" alt="Muse collage" />
-          <svg class='overlay'></svg>
+        <div class="infographic">
+          <ul class="infographic-nav">
+            <li class="infographic-nav__item"></li>
+            <li class="infographic-nav__item"></li>
+            <li class="infographic-nav__item"></li>
+            <li class="infographic-nav__item"></li>
+            <li class="infographic-nav__item"></li>
+          </ul>
+          <p class="infographic-description">Hover over the the image to discover why Nico had such a huge influence on so many people from diffferent artistic schools</p>
         </div>
 
       </div>
-    </article>
 
-  </section>
+      <div class="infographic__container">
+        <div class="infographic__tile--pink">
+          <div class="infographic__tile--pattern"></div>
+        </div>
+        <div class="infographic__tile--cloud">
+          <img
+            class="infographic__tile-wheel"
+            src="assets/img/wheel.png"
+            alt="Nico bohemian"
+            width="126" height="125"
+          />
+        </div>
+        <div class="infographic__tile--lightgrey">
+          <img
+            class="infographic__tile-harmonium"
+            src="assets/img/harmonium.png"
+            alt="Harmonium"
+            width="196" height="137"
+          />
+        </div>
+        <img
+          class="infographic__collage"
+          src="assets/img/nico-collage.png"
+          alt="collage-nico"
+          width="443" height="454"
+        />
+        <!-- <svg class='infographic__overlay'></svg> -->
+      </div>
 
-  <section class="story">
+    </section>
 
-    <header class="story-header">
-      <h1 class="muse-title">Nico's story</h1>
-      <h2 class="muse-sub-title">And her influence as a muse</h2>
-      <svg width="75" height="20"
+ <!--
+  #STORY
+-->
+
+    <section class="story">
+
+      <header class="story__header">
+        <h1 class="story__title">Nico's story</h1>
+        <h2 class="story__subtitle subtitle">And her influence as a muse</h2>
+      </header>
+
+      <svg class="story__divider" width="75" height="20"
           xmlns="http://www.w3.org/2000/svg">
         <rect x="0" y="0" width="75" height="20" fill="#ff6174" />
       </svg>
-    </header>
 
-    <div class='story-content' />
-      <nav class="story-nav">
-        <ul class="story-nav-list">
-          <li class="story-nav-list-item"><a href="#coco_chanel">Coco chanel</a></li>
-          <li class="story-nav-list-item"><a href="#siouxsie">Siouxsie and the Banshees</a></li>
-        </ul>
+      <nav class="story__nav">
+        <img src="assets/img/navigator.png" alt="">
       </nav>
 
-      <div class="parts">
-      <section class="part_1">
+      <div class='story__content'>
 
-        <article class="intro">
-          <div class="intro-content">
-            <p>
-              Nico was born the October 16th 1938 in Cologne, Germany. During the war, in which she lost her father due to sustained head injuries that caused severe brain damage, Nico moved to Spreewald forest outside of Berlin together with her family.
-            </p>
-            <p>
-              She was discovered at 16 by the photographer Herbert Tobias while both were working at a KaDeWe fashion show in Berlin. He gave her the name Nico after her ex-boyfriend, filmmaker Nikos Papatakis, and she used it for the rest of her life.
-            </p>
-            <p>
-              She moved to Paris and began working for a vast amount of fashion magazines such as Vogue, Tempo, Vie Nuove, Mascotte Spettacolo, Camera, Elle, and others..
-            </p>
-          </div>
-
-          <img class="intro-collage" src="assets/img/part_1_collage.jpg" width="424" height="471" alt="Parijs, Berlijn, Camera" />
-        </article>
-
-        <article class="case coco-chanel" id="coco_chanel">
-
-          <img class="case-img" src="assets/img/coco_chanel_1.jpg" width="430" height="420" alt="Nico &amp; Coco Chanel" />
-
-          <div class="case-content">
-
-            <header class="case-header">
-              <h2 class="case-sub-title">Nico &amp;</h2>
-              <h1 class="case-title">Coco Chanel</h1>
-            </header>
-
-            <div class="case-description">
-              <p>
-                Nico has been beautiful since she was a child.
-                After moving to Paris she also got noticed soon by the famous <strong>Coco Chanel</strong>, Coco Chanel took personal interest in her androgynous <strong>protégee</strong> as she was very inspired by her beauty.
+          <!-- #GLUE1 -->
+          <article class="glue glue--1">
+            <h2 class="hidden">Germany and Paris</h2>
+            <div class="glue--1__story">
+              <p class="glue__text">
+                Nico was born the October 16th 1938 in Cologne, Germany. During the war,
+                in which she lost her father due to sustained head injuries that caused severe brain damage,
+                 Nico moved to Spreewald forest outside of Berlin together with her family.
               </p>
-              <p>
-                To further her career and to <strong/>escape</strong> Chanel’s attentions, Nico fled to <strong>New York City</strong> and abandoned the job.
+              <p class="glue__text">
+                She was discovered at 16 by the photographer Herbert Tobias while both were working at a KaDeWe fashion
+                show in Berlin. He gave her the name Nico after her ex-boyfriend, filmmaker Nikos Papatakis, and she used
+                it for the rest of her life.
+              </p>
+              <p class="glue__text">
+                She moved to Paris and began working for a vast amount of fashion magazines such as Vogue,
+                Tempo, Vie Nuove, Mascotte Spettacolo, Camera, Elle, and others..
               </p>
             </div>
+            <div class="glue--1__figure">
+              <img
+                class="glue--1__img-nikon"
+                src="assets/img/nikon.png"
+                alt="Paris"
+                width="280" height="284"
+              />
 
-          </div>
-
-        </article>
-
-      </section>
-
-      <section class="part_7">
-
-        <article class="intro">
-
-          <article class="albums">
-            <header class="hidden">
-              <h3>Albums</h3>
-            </header>
-
-            <article class="album">
-
-              <header class="album-header">
-                <h4>
-                  III. Desertshore
-                </h4>
-              </header>
-
-              <div class="album-cover-container">
-                <img class="album-cover" src="assets/img/desertshore.jpg" alt="Desertshore cover" width="290" height="290" />
-
-                <audio class="album-audio-sample" preload="auto" controls>
-                  <source src="assets/audio/desertshore.mp3" type="audio/mp3" />
-                </audio>
-
-              </div>
-
-            </article>
-
-            <article class="album">
-
-              <header class="album-header">
-                <h4>
-                  IV. The End...
-                </h4>
-              </header>
-
-              <div class="album-cover-container">
-
-                <img class="album-cover" src="assets/img/the_end.jpg" alt="The End... cover" width="290" height="290" />
-
-                <audio class="album-audio-sample" preload="auto" controls>
-                  <source src="assets/audio/the_end.mp3" type="audio/mp3" />
-                </audio>
-
-              </div>
-
-            </article>
-
+              <img
+                class="glue--1__img-berlin"
+                src="assets/img/berlin.png"
+                alt="Paris"
+                width="345" height="217"
+              />
+              <img
+                class="glue--1__img-paris"
+                src="assets/img/eiffel.png"
+                alt="Paris"
+                width="278" height="405"
+              />
+            </div>
           </article>
 
-          <div class="intro-content">
-            <p>
-              In the 70’s Nico alternated more and more between her film career and her music career. She played in multiple movies and also released two more solo albums <strong><em>Desertshore</em></strong> (1970)  and <strong><em>The End… (1974)</em></strong>.</p>
-            <p>
-              She wrote the music, sang, and played the harmonium. <strong>John Cale</strong> produced
-              and played most of the other instruments on both albums.
-            </p>
-            <p>
-              These albums, along with <strong><em>The Marble Index</em></strong>, are now considered a trilogy.
-            </p>
-          </div>
-        </article>
+          <!-- #COCO CHANEL -->
+          <article class="case case--chanel" id="chanel">
+            <img
+              class="case-img" src="assets/img/chanel_1.jpg"
+              width="430" height="420"
+              alt="Nico &amp; Coco Chanel"
+            />
+            <div class="case__content">
+              <header class="case__header">
+                <h3 class="case__subtitle">Nico &amp;</h3>
+                <h2 class="case__title">Coco Chanel</h2>
+              </header>
+              <div class="case__description">
+                <p>
+                  Nico has been beautiful since she was a child.
+                  After moving to Paris she also got noticed soon by the famous <strong>Coco Chanel</strong>,
+                  Coco Chanel took personal interest in her androgynous <strong>protégee</strong> as she was very inspired
+                  by her beauty.
+                </p>
+                <p>
+                  To further her career and to <strong>escape</strong> Chanel’s attentions, Nico fled to
+                  <strong>New York City</strong> and abandoned the job.
+                </p>
+              </div>
+            </div>
+          </article>
 
-        <article class="case coco-siouxsie" id="siouxsie">
-
-          <img class="case-img" src="assets/img/siouxsie_1.jpg" width="430" height="420" alt="Nico &amp; SIOUXSIE AND THE BANSHEES" />
-
-          <div class="case-content">
-
-            <header class="case-header">
-              <h2 class="case-sub-title">Nico &amp;</h2>
-              <h1 class="case-title">SIOUXSIE AND THE BANSHEES</h1>
-            </header>
-
-            <div class="case-description">
-              <p>
-                Nico briefly toured as supporting act for the Proto-gothic rock band Siouxsie and the Banshees. Siouxsie and the Banshees were one of many <strong>post-punk</strong> bands who admired Nico.
+          <!-- #GLUE2 -->
+          <article class="glue glue--2">
+            <h2 class="hidden">New York</h2>
+            <div class="glue--2__figure">
+              <div class="glue--2__img-subcontainer">
+                <div class="glue--2__container-left-cloud"></div>
+                <img
+                  class="glue--2__img-camera"
+                  src="assets/img/camera.png"
+                  alt="Camera"
+                  width="237" height="351"
+                />
+              </div>
+              <div class="glue--2__container-left-dot"></div>
+              <img
+                class="glue--2__img-marilyn"
+                src="assets/img/marilyn.png"
+                alt="Marilyn Monroe"
+                width="234" height="181"
+              />
+            </div>
+            <div class="glue--2__story">
+              <p class="glue__text">
+                Once in New York and abondoned the job she began working for Eileen Ford.
               </p>
-              <p>
-                Nico’s album the marble index is sometimes described as "<strong>the first Goth album</strong>". With its stark sound, somber lyrics, and Nico’s deliberate change in her look, the album became a crucial music and visual prototype for the <strong>gothic rock movement</strong>. Gothic rock also creates a dark atmosphere by drawing influence from the drones used by the Velvet Underground. which is sometimes described as a <strong>protopunk</strong> band.
+              <p class="glue__text">
+                In the meantime she appeared in several television advertisements and she got some small roles in
+                film productions.
               </p>
-              <p>
-                Siouxsie Sioux’ foreboding vocals are influenced by <strong>Nico’s distinct dark style of singing</strong>.
+              <p class="glue__text">
+                While living in New York she also took acting classes with Lee Strasberg, sharing the same
+                class as Marilyn Monroe.
               </p>
             </div>
+            <div class="glue--2__container-right"></div>
+          </article>
 
-          </div>
+          <!-- #FREDERICO FELINI -->
+          <article class="case case--felini" id="felini">
+            <img
+              class="case-img"
+              src="assets/img/felini_1.jpg"
+              width="394" height="334"
+              alt="Nico &amp; Frederico Felini"
+            />
+            <div class="case__content">
+              <header class="case__header">
+                <h3 class="case__subtitle">Nico &amp;</h3>
+                <h2 class="case__title">Frederico Felini</h2>
+              </header>
+              <div class="case__description">
+                <p>
+                  In 1959, Nico was invited to the set of Federico Fellini’s La Dolce Vita, where she attracted
+                  the attention of the acclaimed director. Mesmerized by her beauty, Fellini immediatly wrote an
+                  extra role out for her. She would play as a friend of Marcello - the main character - as herself as Fellini
+                  found that her own character was most interesting as it was.
+                </p>
+              </div>
+            </div>
+          </article>
 
-        </article>
+          <!-- #GLUE3 -->
+          <article class="glue glue--3">
+            <h2 class="hidden">Ari</h2>
+            <div class="glue--3__content">
+              <p class="glue__text">
+                In 1962 - at the age of 24 - Nico gave birth to her son, Christian Aaron “Ari” Päffgen,
+                commonly held to have been fathered by French actor Alain Delon, although Delon always denied his paternity.
+              </p>
+              <p class="glue__text">At about the same time Nico got into music through her friendship with Rolling Stone Brian Jones and Stones manager SNrew Loog Oldham. Together
+                with Brian Jones and Jimmy Page, she recorded her first single. I'm not sayin' for Andrew Loog Oldman's label.
+              </p>
+              <p class="glue__text">
+                Morissey likes playing this song before the beginning of his gigs.
+              </p>
+            </div>
+            <div class="glue--3__figure">
+              <img
+                class="glue--3__img-stroller"
+                src="assets/img/stroller.jpg"
+                alt="Stroller"
+                width="219" height="245"
+              />
+              <img
+                class="glue--3__img-nico-ari"
+                src="assets/img/nico-ari.jpg"
+                alt="Nico and Ari"
+                width="258" height="454"
+              />
+            </div>
+          </article>
 
-      </section>
-    </div>
+          <!-- #BOB DYLAN -->
+          <article class="case case--dylan" id="dylan">
+            <img
+              class="case-img"
+              src="assets/img/dylan_1.jpg"
+              width="461" height="334"
+              alt="Nico &amp;
+              Bob Dylan"
+            />
+            <div class="case__content">
+              <header class="case__header">
+                <h3 class="case__subtitle">Nico &amp;</h3>
+                <h2 class="case__title">Bob Dylan</h2>
+              </header>
+              <div class="case__description">
+                <p>
+                  Dylan was introduced to Nico in Paris. After treating Dylan to a meal at her flat,
+                   Nico accompanied Dylan across Europe, a trip that passed through Germany before ending in Vernilya,
+                    a small village outside of Athens, Greece.
+                </p>
+                <p>
+                  Dylan stayed at Vernilya for more than a week, finishing many of the songs that would appear
+                  on his fourth and upcoming album. Dylan also completed another song called “I’ll Keep It With Mine”,
+                  which was about Nico and Ari (who he used to babysit). He gave the song to Nico, who eventually recorded
+                  it for her album, Chelsea Girl, released in 1967.
+                </p>
+              </div>
+            </div>
+          </article>
 
-    </div>
+          <!-- #GLUE4 -->
+          <article class="glue glue--4">
+            <h2 class="hidden">New York</h2>
+            <div class="glue--4__figure--left">
+              <img
+                class="glue--4__img-liberty"
+                src="assets/img/liberty.png"
+                alt="Statue of Liberty New York"
+                width="349" height="320"
+              />
+            </div>
+            <div class="glue--4__content">
+              <p class="glue__text">
+                While traveling to London Nico got in contact with Andy Warhol’s Entourage,
+                When she went back to New York in 1966 Andy Warhol and Nico got in contact with each other.
+              </p>
+            </div>
+            <div class="glue--4__figure--right">
+              <img
+                class="glue--4__img-factory"
+                src="assets/img/factory.png"
+                alt="The Factory Andy Warhol"
+                width="200" height="331"
+              />
+            </div>
+          </article>
 
-  </section>
+          <!-- #ANDY WARHOL-->
+          <article class="case case--warhol" id="warhol">
+            <img
+              class="case-img"
+              src="assets/img/warhol_1.jpg"
+              width="563" height="628"
+              alt="Nico &amp;
+              Andy Warhol"
+            />
+            <div class="case__content">
+              <header class="case__header">
+                <h3 class="case__subtitle">Nico &amp;</h3>
+                <h2 class="case__title">Andy Warhol</h2>
+              </header>
+              <div class="case__description">
+                <p>
+                  When Nico first met Andy Warhol in a Mexican restaurant, Warhol was captivated by her and so
+                   was his companion Paul Morrissey. They were convinced to cast her in in their experimental movie projects.
+                </p>
+                <p>
+                  Warhol took her in at the Factory and Nico became a Warhol Superstar. These Superstars were unique
+                   personalities that appeared in Warhol’s artworks and accompanied him in his social life. In addition
+                    to the film of her singing with the Velvet Underground at the Factory, she also went on to appear in
+                    The Chelsea Girls and Imitation of Christ which was originally part of **** (Four Stars) or the twenty-five
+                     hour movie. Warhol also used her voice as the soundtrack for Sunset - which he shot in 1967.
+                </p>
+              </div>
+            </div>
+          </article>
 
-    <section class='meter center'>
-      <header class='meter-header'>
-        <h1 class='meter-title'>
+          <!-- #GLUE5 -->
+          <article class="glue glue--5">
+            <h2 class="hidden">The Factory</h2>
+            <div class="glue--5__figure--left">
+              <img
+                class="glue--5__img-beauty"
+                src="assets/img/beauty.png"
+                alt="Lipstick and mascara"
+                width="84" height="237"
+              />
+            </div>
+            <div class="glue--5__content">
+              <p class="glue__text">
+                Andy Warhol and Paul Morissy were convinced that they had to find a rock group to play for her.
+              </p>
+              <p class="glue__text">
+                They made her the vocalist of The Velvet underground.
+                She was described by them as ‘the most beautiful creature that ever lived’.
+            </div>
+            <div class="glue--5__figure--right">
+              <img
+                class="glue--5__img-microphone"
+                src="assets/img/microphone.png"
+                alt="Vocalist microphone"
+                width="99" height="335"
+              />
+            </div>
+          </article>
+
+          <!-- #VELVET NDERGROUND-->
+          <article class="case case--underground" id="underground">
+            <img
+              class="case-img"
+              src="assets/img/underground_1.jpg"
+              width="394" height="464"
+              alt="Nico &amp;
+              Frederico Felini"
+            />
+            <div class="case__content">
+              <header class="case__header">
+                <h3 class="case__subtitle">Nico &amp;</h3>
+                <h2 class="case__title">The Velvet Underground</h2>
+              </header>
+              <div class="case__description">
+                <p>
+                  Nico was introduced to the avant-garde rock band The Velvet Underground by Andy Warhol,
+                  who was its manager at the time.
+                  At Warhol’s insistence, Nico sang with the band on three songs of their debut album,
+                  The Velvet Underground & Nico.
+                  The songs were specially tuned for Nico’s deadpen voices wich propelled the songs.
+                </p>
+                <p>
+                  At the time it was not a huge succes,but it is now widely considered one of the most
+                  influential rock albums ever recorded. Rolling Stone has it listed as the 13th greatest album
+                  of all time.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- #GLUE6 -->
+          <article class="glue glue--6">
+            <h2 class="hidden">I. Chelsea Girls</h2>
+            <div class="glue--6__figure">
+              <div class="glue--6__figure-left">
+                <img
+                  class="glue--6__img-reed"
+                  src="assets/img/lou-reed.png"
+                  alt="Lou Reed"
+                  width="233" height="273"
+                />
+              </div>
+              <div class="glue--6__figure-right">
+                <img
+                  class="glue--6__img-cale"
+                  src="assets/img/john-cale.png"
+                  alt="John Cale"
+                  width="276" height="267"
+                />
+              </div>
+            </div>
+            <div class="glue--6__bot-container">
+              <div class="album album__container glue--6__album">
+                <div class="album__cover-container glue--6__album-cover-container">
+                  <header class="album__header">
+                    <h4 class="album__title">
+                      IV. The end
+                    </h4>
+                  </header>
+                  <img class="album__cover" src="assets/img/chelsea-girl.jpg" alt="Desertshore cover" width="290" height="290" />
+                  <audio class="album__audio-sample" preload="auto">
+                    <source src="assets/audio/desertshore.mp3" type="audio/mp3" />
+                  </audio>
+                </div>
+                <img
+                  class="album__img-vinyl"
+                  src="assets/img/vinyl.png"
+                  alt="vinyl disc"
+                  width="258" height="259"
+                />
+              </div>
+              <div class="glue--6__content">
+                <p class="glue__text">
+                  After leaving The Velvet Underground Nico began work as a solo artist, performing
+                  regularly at The Dom in New York City.
+                  At these shows, she was accompanied by a revolving cast of guitarists.
+                </p>
+                <p class="glue__text">
+                  For her debut album, 1967’s Chelsea Girl, she recorded songs by Bob Dylan,
+                  Tim Hardin and Jackson Browne, among others. Velvet Underground members Lou Reed,
+                  John Cale and Sterling Morrison contributed to the album.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- #LEONARD COHEN-->
+          <article class="case case--cohen" id="cohen">
+            <img
+              class="case-img"
+              src="assets/img/cohen_1.jpg"
+              width="394" height="334"
+              alt="Nico &amp;
+              Leonard Cohen"
+            />
+            <div class="case__content">
+              <header class="case__header">
+                <h3 class="case__subtitle">Nico &amp;</h3>
+                <h2 class="case__title">Leonard Cohen</h2>
+              </header>
+              <div class="case__description">
+                <p>
+                  During the 1960s, both Nico and Leanord Cohen were both fringe figures in Andy Warhol’s “Factory” crowd.
+                  Warhol speculated that Cohen had spent many time listening to Nico in clubs and that this had
+                  influenced his musical style a lot.
+                  Especially Chelsea Girl greatly influenced him.
+                </p>
+                <p>
+                  Nico also repeatedly spurned Cohen’s advances - preferring younger men - wich resulted
+                  in Cohen writing songs about her: “Memories”, “Joan Of Arc,” “Take This Longing,”
+                  and “One Of Us Cannot Be Wrong” are all inspired by Nico
+                </p>
+                <p>
+                  On the other hand, it was Cohen who introduced Nico to her signature instrument:
+                  the harmonium. His first impressions of her was that she looked like “the perfect Aryan ice queen”.
+                  He followed her all around New York.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- #GLUE7 -->
+          <article class="glue glue--7">
+            <h2 class="hidden">The Marble Index</h2>
+            <div class="album album__container glue--7__album">
+              <div class="album__cover-container glue--7__album-cover-container"><header class="album__header">
+                <h4 class="album__title">
+                  IV. The end
+                </h4>
+              </header>
+                <img class="album__cover" src="assets/img/marbleindex.jpg" alt="Desertshore cover" width="290" height="290" />
+                <audio class="album__audio-sample" preload="auto">
+                  <source src="assets/audio/desertshore.mp3" type="audio/mp3" />
+                </audio>
+              </div>
+              <img
+                class="album__img-vinyl"
+                src="assets/img/vinyl.png"
+                alt="vinyl disc"
+                width="258" height="259"
+              />
+            </div>
+            <div class="glue--7__content">
+              <p class="glue__text">
+                For The Marble Index, her second solo album released in 1969, Nico wrote the lyrics and music.
+                Accompaniment mainly centered around Nico’s harmonium, while John Cale added an array of folk and
+                classical instruments, and arranged the album. The album has a classical-cum-European folk sound.
+              </p>
+            </div>
+          </article>
+
+          <!-- #HARMONIUM -->
+          <article class="harmonium">
+            <div class="harmonium__top">
+              <div class="harmonium__top-left">
+                <header>
+                  <h2 class="harmonium__title">Harmonium</h2>
+                  <h3 class="harmonium__subtitle">experience the</h3>
+                </header>
+                <p class="harmonium__text">
+                  A harmonium generates quite a uniques sound, often described as “wheezing” and “droning”.
+                  Hear for yourself what a harmonium sounds like!
+                </p>
+              </div>
+              <div class="harmonium__figure">
+                <div class="harmonium__figure-dots"> </div>
+                <div class="harmonium__figure-img-container">
+                  <img
+                  class="harmonium__figure-img"
+                  src="assets/img/harmonium2.png"
+                  alt="Harmonium"
+                  width="349" height="236">
+                </div>
+              </div>
+            </div>
+            <div class="harmonium__bot">
+              <div class="harmonium__bg">
+                <div class="harmonium__instrument"></div>
+                <div class="harmonium__note">RE</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- #PHILIPPE GAREL-->
+          <article class="case case--garel" id="garel">
+            <img
+              class="case-img"
+              src="assets/img/garel_1.jpg"
+              width="394" height="334"
+              alt="Nico &amp;
+              Frederico Felini"
+            />
+            <div class="case__content">
+              <header class="case__header">
+                <h3 class="case__subtitle">Nico &amp;</h3>
+                <h2 class="case__title">Philippe Garrel</h2>
+              </header>
+              <div class="case__description">
+                <p>
+                  Nico met Garrel in 1969 and contributed the song The Falconer to his film Le Lit de la Vierge.
+                </p>
+                <p>
+                  Soon after, she was living with Garrel and became a central figure in his cinematic and personal
+                   circles for about 10 years.
+                  During her relationship with Garrel Nico started using heroin, wich she was addicted to
+                  for over 15 years.
+                </p>
+                <p>
+                  Nico’s first acting appearance with Garrel occurred in his 1972 film, La Cicatrice Intérieure.
+                  Nico also supplied the music for this film, among others. and collaborated very closely with the director.
+                </p>
+                <p>
+                  Nico was his muse and source of inspiration.
+                  His 1991 film J’entends Plus la Guitare was completly dedicated to Nico.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- #GLUE8 -->
+          <article class="glue glue--8">
+            <h2 class="hidden">Desertshore &amp; The end...</h2>
+            <div class="album__container--large-h glue--8__album-container">
+
+              <div class="album glue--8__album-desertshore">
+                <div class="album__cover-container glue--8__album-cover-container">
+                  <header class="album__header">
+                    <h4 class="album__title">
+                      IV. The end
+                    </h4>
+                  </header>
+                  <img class="album__cover" src="assets/img/desertshore.jpg" alt="Desertshore cover" width="290" height="290" />
+                  <audio class="album__audio-sample" preload="auto">
+                    <source src="assets/audio/desertshore.mp3" type="audio/mp3" />
+                  </audio>
+                </div>
+              </div>
+
+              <div class="album glue--8__album-the-end">
+                <div class="album__cover-container glue--8__album-cover-container">
+                  <header class="album__header">
+                    <h4 class="album__title">
+                      IV. The end
+                    </h4>
+                  </header>
+                  <img class="album__cover" src="assets/img/the-end.jpg" alt="Desertshore cover" width="290" height="290" />
+                  <audio class="album__audio-sample" preload="auto">
+                    <source src="assets/audio/desertshore.mp3" type="audio/mp3" />
+                  </audio>
+                </div>
+              </div>
+
+              <img
+                class="album__img-vinyl--large-h"
+                src="assets/img/vinyl.png"
+                alt="vinyl disc"
+                width="258" height="259"
+              />
+
+            </div>
+            <div class="glue--8__bot-container">
+              <div class="glue--8__content">
+                <p class="glue__text">
+                  In the 70’s Nico alternated more and more between her film career and her music career.
+                  She played in multiple movies and also released two more solo albums Desertshore (1970)
+                  and The End… (1974).
+                </p>
+                <p class="glue__text">
+                  She wrote the music, sang, and played the harmonium. John Cale produced
+                  and played most of the other instruments on both albums.
+                </p>
+                <p class="glue__text">
+                  These albums, along with The Marble Index, are now considered a trilogy.
+                </p>
+              </div>
+              <div class="glue--8__figure">
+              </div>
+            </div>
+          </article>
+
+          <!-- #SIOUXSIE AND THE BANSHEES -->
+          <article class="case case--siouxsie" id="siouxsie">
+            <img
+              class="case-img"
+              src="assets/img/siouxsie_1.jpg"
+              width="507" height="349"
+              alt="Nico &amp;
+              Frederico Felini"
+            />
+            <div class="case__content">
+              <header class="case__header">
+                <h3 class="case__subtitle">Nico &amp;</h3>
+                <h2 class="case__title">Siouxsie and the banshees</h2>
+              </header>
+              <div class="case__description">
+                <p>
+                  Nico briefly toured as supporting act for the Proto-gothic rock band Siouxsie and the Banshees.
+                  Siouxsie and the Banshees were one of many post-punk bands who admired Nico.
+                </p>
+                <p>
+                  Nico’s album the marble index is sometimes described as “the first Goth album”.
+                  With its stark sound, somber lyrics, and Nico’s deliberate change in her look,
+                  the album became a crucial music and visual prototype for the gothic rock movement.
+                  Gothic rock also creates a dark atmosphere by drawing influence from the drones used by the Velvet Underground.
+                  which is sometimes described as a protopunk band.
+                </p>
+                <p>
+                  Siouxsie Sioux’ foreboding vocals are influenced by Nico’s distinct dark style of singing.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- #GLUE9 -->
+          <article class="glue glue--9">
+            <h2 class="hidden">Drama of Exile &amp; Camera obscure</h2>
+            <div class="glue--9__container-top">
+              <div class="album__container--large-v glue--9__album-container">
+
+                <div class="album glue--9__album-drama-of-exile">
+                  <div class="album__cover-container glue--9__album-cover-container">
+                    <header class="album__header">
+                      <h4 class="album__title">
+                        V. Drama of exile
+                      </h4>
+                    </header>
+                    <img class="album__cover" src="assets/img/drama.jpg" alt="Drama of Exile cover" width="290" height="290" />
+                    <audio class="album__audio-sample" preload="auto">
+                      <source src="assets/audio/desertshore.mp3" type="audio/mp3" />
+                    </audio>
+                  </div>
+                </div>
+
+                <div class="album glue--9_album-the-end">
+                  <div class="album__cover-container glue--9__album-cover-container">
+                    <header class="album__header">
+                      <h4 class="album__title">
+                        VI. Camera Obscura
+                      </h4>
+                    </header>
+                    <img class="album__cover" src="assets/img/camera.jpg" alt="Camera Obscura cover" width="290" height="290" />
+                    <audio class="album__audio-sample" preload="auto">
+                      <source src="assets/audio/desertshore.mp3" type="audio/mp3" />
+                    </audio>
+                  </div>
+                </div>
+
+                <img
+                  class="album__img-vinyl--large-v"
+                  src="assets/img/vinyl.png"
+                  alt="vinyl disc"
+                  width="258" height="259"
+                />
+
+              </div>
+              <div class="album--large-v-descriptions">
+                <p class="glue__text">During the eighties Nico did periodic solo shows on the club circuit.
+                  In 1981 she released her first LP in seven years, Drama of Exile. </p>
+                <p class="glue__text">She recorded what would be her last album, Camera Obscura, in 1985, again  produced by John Cale.
+                </p>
+              </div>
+            </div>
+
+            <div class="glue--9__container-mid">
+              <div class="glue--9__container-mid-top">
+                <div class="glue--9__container-mid-top-figure">
+                  <div class="glue--9__container-mid-top-dots">
+                    <div class="glue--9__container-mid-top-pink">
+                      <img
+                        class="glue--9__container-mid-top-van"
+                        src="assets/img/glue-9-van.png"
+                        alt="Van - Nico leads a nomad life"
+                        width="348"
+                        height="191"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="glue--9__container-mid-top-text">
+                  <p class="glue__text">
+                    Leading a bohemian lifestyle, Nico floated from country to country,
+                    spending the last  year of her life in Manchester, England. Reportedly,
+                    her methadone dependency had diminished and her songwriting  had increased when she
+                    took her grown son, Ari, on holiday to the Spanish island of Ibiza.
+                  </p>
+
+                  <p class="glue__text">
+                    On the island Nico had a heart attack while riding a bicycle, and she hit her head as she fell;
+                     Misdiagnosed as having a sunstroke, she died there the next evening of a cerebral hemorrhage
+                  </p>
+                </div>
+              </div>
+              <div class="glue--9__container-mid-bot">
+                <div class="glue--9__container-mid-bg">
+                  <img
+                    class="glue--9__container-mid-patti"
+                    src="assets/img/glue-9-patti.png"
+                    alt="Pattie Smith"
+                    width="286"
+                    height="319"
+                  />
+                </div>
+                <div class="glue--9__container-mid-bot-text">
+                  <p class="glue__text">
+                    Punk legend Patti Smith has made the album “Killer road”,
+                    a narrative about this Tragic event as a tribute to Nico.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glue--9__container-bot">
+              <div class="glue--9__container-bot-figure">
+                <div class="glue--9__container-bot-figure-pink">
+
+                </div>
+
+                <div class="glue--9__container-bot-figure-black">
+                  <img
+                    class="glue--9__container-bot-figure-roman"
+                    src="assets/img/glue-9-roman.png"
+                    alt="muse style"
+                    width="140"
+                    height="517"
+                  />
+                  <div class="glue--9__container-bot-figure-dots">
+                  </div>
+                  <img
+                    class="glue--9__container-bot-figure-nico"
+                    src="assets/img/glue-9-nico.png"
+                    alt="Nico as an icon"
+                    width="434"
+                    height="517"
+                  />
+                </div>
+              </div>
+              <div class="glue--9__container-bot-content">
+                <p class="glue__text">After her death, maybe more than ever, artists look to Nico
+                   in search of inspiration. In this way Nico is still a muse,
+                   and will continue to be, as her icon grows ever larger.
+                </p>
+                <div class="glue--9__container-bot-content-bg">
+                </div>
+              </div>
+            </div>
+          </article>
+
+
+      </div>
+    </section>
+
+<!--
+   #METER
+-->
+
+    <section class='meter'>
+      <header class='meter__header'>
+        <h1 class='meter__title'>
           Nico <span class='highlighted'>influence meter</span>
         </h1>
-        <h2 class='meter-sub-title'>How much has nico influenced you through other artists?</h2>
+        <h2 class='meter__subtitle subtitle'>Nico's influence on you through other artists</h2>
+        <svg class="meter__divider" width="75" height="20"
+            xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="75" height="20" fill="#ff6174" />
+        </svg>
       </header>
 
-      <article>
-        <header class='meter-header'>
-          <h3 class='meter-title'>Who do you like?</h3>
+      <div class="meter__intro">
+        <p class="glue__text meter__intro-text">Nico has been a muse for artists in her time and is an icon for artists present and future.
+           Select the artists that you know or inspired you and find out how much Nico was involved in the music you like!
+        </p>
+      </div>
 
-          <svg width='65' height='4'
-              xmlns='http://www.w3.org/2000/svg'>
-            <rect x='0' y='0' width='65' height='4' fill='#ff6174' />
-          </svg>
+
+
+      <article class="meter__interactive">
+        <header>
+          <h3 class='meter__h3'>Who do you like?</h3>
         </header>
 
         <div class='influenceMeterApp-react-mount'></div>
+
       </article>
+
+
     </section>
   </main>
 
+<!--
+   #FOOTER
+-->
+
   <footer class="footer">
 
-    <div class="footer-content center">
-      <p class="classic-stories">
-        Luister naar meer verhalen <br/> van legendes op onze <a target="_blank" class="highlighted" href="http://www.nostalgie.eu/nl/programmas/classic-stories/">Classic Stories</a>
-      </p>
+    <div class="footer-content">
 
-      <div>
-        <a class="logo-link" href="http://www.nostalgie.eu/" target="_blank"><div class="hidden">nostalgie.eu</div></a>
+
+      <div class="footer__left">
+        <a class="footer__left-title" target="_blank"  href="http://www.nostalgie.eu/nl/programmas/classic-stories/">
+            Classic <br />Stories
+        </a>
+          <p class="footer__left-p">By radio nostalgie</p>
+          <p class="footer__left-sub">
+            <a  class="footer__left-tune" target="_blank"  href="http://www.nostalgie.eu/nl/programmas/classic-stories/">
+                Tune in
+            </a>
+            for more <em class="footer__left-bold">Legendary tales</em>
+          </p>
+      </div>
+      <div class="footer__left-fill"></div>
+
+      <div class="footer__center">
+        <a class="logo-link" target="_blank" href="http://www.nostalgie.eu/">
+          <span class="hidden">nostalgie.eu</span>
+        </a>
         <p class="copyright">&copy; 2017 - Nostalgie 'What a feeling!'</p>
       </div>
 
-      <div class="social-media">
-        <span>Volg ons op</span>
+      <div class="footer__right">
+        <span class="footer__right-p">Follow us</span>
 
         <ul class="social-media-buttons-list">
 
           <li class="social-media-buttons-list-item">
             <a class="social-media-link" target="_blank" href="https://www.facebook.com/Nostalgie.WhatAFeeling/?fref=ts">
               <svg version="1.1" class="social-media-button facebook"
-              	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-              	 x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+              	 xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+              	 x="0px" y="0px"
+                 width="4.2rem" height="4.2rem"
+                 viewBox="0 0 20 20"
+                 style="enable-background:new 0 0 20 20;"
+                 xml:space="preserve">
                 <style type="text/css">
                 	.st0{fill:#BDC0C4;}
                 </style>
@@ -313,8 +969,12 @@
           <li class="social-media-buttons-list-item">
             <a class="social-media-link" target="_blank" href="https://twitter.com/NostalgieEU">
               <svg version="1.1" class="social-media-button twitter"
-              	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-              	 x="0px" y="0px" width="23.8px" height="19.8px" viewBox="0 0 23.8 19.8" style="enable-background:new 0 0 23.8 19.8;"
+              	 xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+              	 x="0px" y="0px"
+                 width="4.2rem" height="4.2rem"
+                 viewBox="0 0 23.8 19.8"
+                 style="enable-background:new 0 0 23.8 19.8;"
               	 xml:space="preserve">
                 <style type="text/css">
                 	.st0{fill:#BDC0C4;}
@@ -333,8 +993,12 @@
           <li class="social-media-buttons-list-item">
             <a class="social-media-link" target="_blank" href="https://www.instagram.com/nostalgiewhatafeeling/">
               <svg version="1.1" class="social-media-button instagram"
-              	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-              	 x="0px" y="0px" width="20px" height="20px" viewBox="0 0 20 20" style="enable-background:new 0 0 20 20;" xml:space="preserve">
+              	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+              	 x="0px" y="0px"
+                 width="4.2rem" height="4.2rem"
+                 viewBox="0 0 20 20"
+                 style="enable-background:new 0 0 20 20;"
+                 xml:space="preserve">
                 <style type="text/css">
               	.st0{fill:#BDC0C4;}
                 </style>
@@ -348,7 +1012,6 @@
               </svg>
             </a>
           </li>
-
         </ul>
       </div>
     </div>
