@@ -51,7 +51,7 @@ const createButtonBackground = () => {
 
 const toggleButtonState = ($svg, $audioTagIsPaused) => {
 
-  console.log($svg, $audioTagIsPaused);
+  // console.log($svg, $audioTagIsPaused);
 
   $svg.innerHTML = ``;
 

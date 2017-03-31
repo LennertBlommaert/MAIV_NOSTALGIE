@@ -45,7 +45,9 @@ const createThumbnail = (imgFilename, $case) => {
 const onThumbnailClick = (imgFilename, $case) => {
 
   const $img = $case.querySelector(`.case-img`);
-
-  $img.src = `assets/img/${imgFilename}`;
-
+  $img.classList.remove(`revealedX`);
+  $img.addEventListener(`transitionend`, (() => {
+    $img.src = `assets/img/${imgFilename}`;
+    $img.classList.add(`revealedX`);
+  }));
 };
