@@ -9,23 +9,15 @@ import infographic from './lib/infographic';
 import audioPlayer from './lib/audioPlayer';
 import stickyNav from './lib/stickyNav';
 import animateIn from './lib/animateIn';
+import scrollToItem from './lib/scrollToItem';
 
 
 const init = () => {
 
-  const $cases = document.querySelectorAll(`.case`);
-
-  for (let i = 0;i < $cases.length;i ++) {
-    imageViewer($cases[i]);
-  }
-
+  initAutoScroll();
   infographic(`assets/data/features.csv`);
-
-  const $audioTags = document.querySelectorAll(`.album`);
-
-  for (let i = 0;i < $audioTags.length;i ++) {
-    audioPlayer($audioTags[i]);
-  }
+  initCases();
+  initAlbums();
 
   render(
     <InfluenceMeterApp  />,
@@ -39,13 +31,34 @@ const init = () => {
 
   stickyNav();
 
+};
+
+const initAutoScroll = () => {
+
+  const $scrollIndicator = document.querySelector(`.scroll-indicator`);
+  $scrollIndicator.addEventListener(`click`, () => scrollToItem(`muse`));
+
+};
+
+const initCases = () => {
+  const $cases = document.querySelectorAll(`.case`);
+
+  for (let i = 0;i < $cases.length;i ++) {
+    imageViewer($cases[i]);
+  }
 
   animateIn($cases, `revealedX`);
 
   const $caseImgs = document.querySelectorAll(`.case-img`);
   animateIn($caseImgs, `revealedX`);
-
 };
 
+const initAlbums = () => {
+  const $audioTags = document.querySelectorAll(`.album`);
+
+  for (let i = 0;i < $audioTags.length;i ++) {
+    audioPlayer($audioTags[i]);
+  }
+};
 
 init();
