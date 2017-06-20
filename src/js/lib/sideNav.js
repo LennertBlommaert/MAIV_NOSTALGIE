@@ -47,9 +47,9 @@ export default () => {
 const manageVisibility = () => {
   const $sidenav = document.querySelector(`.story__nav`);
   if (window.scrollY >= 1550 && window.scrollY <= 12725) {
-    $sidenav.style.opacity = 1;
+    $sidenav.classList.add(`visible`);
   } else {
-    $sidenav.style.opacity = 0;
+    $sidenav.classList.remove(`visible`);
   }
 };
 
@@ -63,17 +63,18 @@ const setNavList = () => {
     const $li = document.createElement(`li`);
     $li.addEventListener(`click`, () => handleCaseClick(c.name));
 
-    const $span = document.createElement(`span`);
-    $span.innerHTML = c.name;
-    $li.appendChild($span);
-
     const $img = document.createElement(`img`);
     $img.setAttribute(`src`, `assets/img/${c.imgFilename}`);
     $img.setAttribute(`width`, 45);
     $img.setAttribute(`height`, 45);
     $li.appendChild($img);
 
+    const $span = document.createElement(`span`);
+    $span.innerHTML = c.name;
+    $li.appendChild($span);
+
     $li.classList.add(c.name);
+    $li.classList.add(`story__nav-list-item`);
 
     $sideNavList.appendChild($li);
   });
@@ -84,19 +85,24 @@ const setCurrentCase = () => {
   const $sideNavList = document.querySelector(`.story__nav-list`);
 
   const currentCase = cases.find(c => {
-    console.log(c.name);
     const $el = document.getElementById(c.name);
-    console.log($el);
-    console.log(isElementInViewport($el));
     return isElementInViewport($el);
   });
 
-  console.log(currentCase);
+  resetNavListItems();
 
   if (currentCase) $sideNavList.querySelector(`.${currentCase.name}`).classList.add(`active`);
   // if (currentCase) $sidenav.innerHTML += currentCase.name;
 
   //console.log(currentCase);
+};
+
+const resetNavListItems = () => {
+  const $sideNavListItems = document.querySelectorAll(`.story__nav-list-item`);
+
+  for (let i = 0;i < $sideNavListItems.length;i ++) {
+    $sideNavListItems[i].classList.remove(`active`);
+  }
 };
 
 const onScroll = () => {

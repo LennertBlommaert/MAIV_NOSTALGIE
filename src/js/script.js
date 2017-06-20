@@ -5,12 +5,12 @@ import {render} from 'react-dom';
 import InfluenceMeterApp from './containers/InfluenceMeterApp';
 // import InfographicApp from './containers/InfographicApp';
 // import HarmoniumApp from './containers/HarmoniumApp';
-import imageViewer from './lib/imageViewer';
+// import imageViewer from './lib/imageViewer';
 // import infographic from './lib/infographic';
-// import audioPlayer from './lib/audioPlayer';
+import audioPlayer from './lib/audioPlayer';
 // import stickyNav from './lib/stickyNav';
 import sideNav from './lib/sideNav';
-import animateIn from './lib/animateIn';
+// import animateIn from './lib/animateIn';
 // import scrollToItem from './lib/scrollToItem';
 
 
@@ -19,8 +19,8 @@ const init = () => {
   // initAutoScroll();
   // infographic(`assets/data/features.csv`);
   // initGlueImages();
-  initCases();
-  // initAlbums();
+  // initCases();
+  initAlbums();
   //
   // if (window.innerWidth >= 700) {
   //   render(
@@ -56,31 +56,31 @@ const init = () => {
 //
 // };
 //
-const initCases = () => {
-  const $cases = document.querySelectorAll(`.case`);
-
-  for (let i = 0;i < $cases.length;i ++) {
-    $cases[i].classList.add(`translated`);
-    imageViewer($cases[i]);
-  }
-
-  animateIn($cases, `revealedX`);
-
-  const $caseImgs = document.querySelectorAll(`.case-img`);
-
-  for (let i = 0;i < $caseImgs.length;i ++) {
-    $caseImgs[i].classList.add(`translated`);
-  }
-
-  animateIn($caseImgs, `revealedX`);
-};
+// const initCases = () => {
+//   const $cases = document.querySelectorAll(`.case`);
 //
-// const initAlbums = () => {
-//   const $audioTags = document.querySelectorAll(`.album`);
-//
-//   for (let i = 0;i < $audioTags.length;i ++) {
-//     audioPlayer($audioTags[i]);
+//   for (let i = 0;i < $cases.length;i ++) {
+//     $cases[i].classList.add(`translated`);
+//     imageViewer($cases[i]);
 //   }
+//
+//   animateIn($cases, `revealedX`);
+//
+//   const $caseImgs = document.querySelectorAll(`.case-img`);
+//
+//   for (let i = 0;i < $caseImgs.length;i ++) {
+//     $caseImgs[i].classList.add(`translated`);
+//   }
+//
+//   animateIn($caseImgs, `revealedX`);
 // };
+//
+const initAlbums = () => {
+  const $audioTags = document.querySelectorAll(`.album`);
+
+  for (let i = 0;i < $audioTags.length;i ++) {
+    audioPlayer($audioTags[i]);
+  }
+};
 
 init();
