@@ -7,7 +7,7 @@ import FeatureDescription from '../components/FeatureDescription.jsx';
 class InfographicApp extends Component {
 
   state = {
-    currentFeatureDescription: `Hover over the dots to discover what made Nico such a source of inspiration`,
+    currentFeature: new Feature(0, 0, `Hover over the dots to see what assets made Nico such a source of inspiration.`),
     features: [
       new Feature(10, 20, `Although she was deaf in one ear, she became a very influential singer and musician. Nico had a trademark deep and heavy voice with a slight German accent no doubt this contributed to her androgynous image and people describing her as teutonic.`),
       new Feature(50, 40, `Her trademark was her unique instrument: the harmonium, a type of pump organ.  the pedal-powered keyboard instrument makes wheezing, droning sounds which underpin all her later work, and which furnished a suitably haunting, miasmic base for her compositions`),
@@ -23,20 +23,20 @@ class InfographicApp extends Component {
     const feature = features.find(f => f.id === id);
     feature.toggleSelected();
 
-    this.setState({currentFeatureDescription: feature.desc});
+    this.setState({currentFeature: feature});
   }
 
   render() {
 
-    const {features, currentFeatureDescription} = this.state;
+    const {features, currentFeature} = this.state;
 
     return (
       <div className='infographic__wrapper'>
         <div>
           <img src='assets/img/infographic.png' />
-          <Features setSelectedFeature={this.setSelectedFeature} features={features} />
+          <Features setSelectedFeature={this.setSelectedFeature} features={features} currentFeatureId={currentFeature.id} />
         </div>
-        <FeatureDescription className='infographic__description' currentFeatureDescription={currentFeatureDescription} />
+        <FeatureDescription className='infographic__description' currentFeatureDescription={currentFeature.desc} />
       </div>
     );
   }

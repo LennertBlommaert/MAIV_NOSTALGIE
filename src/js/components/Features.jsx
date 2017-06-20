@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 
-const Dots = ({features, setSelectedFeature: handleSelect}) => {
+const Dots = ({features, setSelectedFeature: handleSelect, currentFeatureId}) => {
 
   return (
     <svg className='infographic__overlay' width='100%' height='100%'>
@@ -16,6 +16,7 @@ const Dots = ({features, setSelectedFeature: handleSelect}) => {
             rx='35px' ry='35px'
             fill='#ff6174'
             strokeWidth='2px'
+            stroke={f.id === currentFeatureId ? `#ffffff` : ``}
           />
         )
 
@@ -28,7 +29,8 @@ const Dots = ({features, setSelectedFeature: handleSelect}) => {
 
 Dots.propTypes = {
   features: PropTypes.array.isRequired,
-  setSelectedFeature: PropTypes.func.isRequired
+  setSelectedFeature: PropTypes.func.isRequired,
+  currentFeatureId: PropTypes.string.isRequired
 };
 
 export default Dots;

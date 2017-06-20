@@ -1,12 +1,13 @@
 import React, {PropTypes} from 'react';
 
-const Note = ({id, onClick, cx, cy, isActive}) => {
+const Note = ({id, onActivate, cx, cy, isActive}) => {
 
-  const handleClick = () => onClick(id);
+  const handleActivate = () => onActivate(id);
 
   return (
     <ellipse
-      onClick={handleClick}
+      onClick={handleActivate}
+      onMouseOver={handleActivate}
       cx={cx} cy={cy}
       rx='20' ry='20'
       strokeWidth='2'
@@ -19,7 +20,7 @@ const Note = ({id, onClick, cx, cy, isActive}) => {
 
 Note.propTypes = {
   id: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onActivate: PropTypes.func.isRequired,
   cx: PropTypes.number.isRequired,
   cy: PropTypes.number.isRequired,
   isActive: PropTypes.bool.isRequired

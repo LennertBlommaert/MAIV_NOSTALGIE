@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import Note from './Note';
 
-const Staff = ({audio, onClickNote: handleClickNote}) => {
+const Staff = ({audio, onActivateNote: handleActivateNote}) => {
 
   const staffHeight = 230;
   const staffWidth = 1000;
@@ -25,7 +25,7 @@ const Staff = ({audio, onClickNote: handleClickNote}) => {
 
                 <Note cx={(staffWidth / 16) * audioItem.id}
                   cy={staffHeight - 20 * audioItem.id}
-                  onClick={handleClickNote}
+                  onActivate={handleActivateNote}
                   {...audioItem}
                 />;
               </g>
@@ -40,7 +40,7 @@ const Staff = ({audio, onClickNote: handleClickNote}) => {
 
 Staff.propTypes = {
   audio: PropTypes.array.isRequired,
-  onClickNote: PropTypes.func.isRequired
+  onActivateNote: PropTypes.func.isRequired
 };
 
 export default Staff;

@@ -67,7 +67,7 @@ class Harmonium extends Component {
     ]
   }
 
-  handleClickNote = id => {
+  handleActivateNote = id => {
 
     const {audio} = this.state;
 
@@ -89,12 +89,14 @@ class Harmonium extends Component {
 
     return (
       <div>
-        <Staff onClickNote={this.handleClickNote} audio={audio} />
-        {
-          currentAudio.name !== undefined ?
-            <CurrentNote note={currentAudio.name} />
-          : ``
-        }
+        <Staff onActivateNote={this.handleActivateNote} audio={audio} />
+        <div className='harmonium__bg'>
+          {
+            currentAudio.name !== undefined ?
+                <CurrentNote note={currentAudio.name} />
+            : <div className='harmonium__note'>/</div>
+          }
+        </div>
       </div>
     );
   }
