@@ -31,7 +31,7 @@ class Bar extends Component {
     console.log(isOver, canDrop);
 
     return connectDropTarget(
-      <ul className='bar'>
+      <ul className={`bar ${canDrop ? `can-drop` : ``}`}>
         {
 
           artists.map(artist => {

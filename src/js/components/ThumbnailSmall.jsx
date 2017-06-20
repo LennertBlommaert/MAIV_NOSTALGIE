@@ -36,7 +36,7 @@ class ThumbnailSmall extends Component {
         opacity: isDragging ? 0.5 : 1,
         cursor: `move`
       }}>
-        <ThumbnailImage imgPath={imgPath} width={60} height={60} />
+        <ThumbnailImage imgPath={imgPath} width={80} height={80} />
       </li>
     );
   }

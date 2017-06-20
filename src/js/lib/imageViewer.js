@@ -1,5 +1,6 @@
 export default $case => {
 
+  //dataset ipv id
   const artist = $case.id;
 
   const imgFilenames = getImageFilenames(artist);
@@ -8,7 +9,7 @@ export default $case => {
   $thumbnails.classList.add(`case__thumbnails`);
 
   for (let i = 0;i < imgFilenames.length;i ++) {
-    $thumbnails.appendChild(createThumbnail(imgFilenames[i], $case));
+    $thumbnails.appendChild(createThumbnail(imgFilenames[i], $case, i));
   }
 
   const $caseContent = $case.querySelector(`.case__content`);
@@ -28,13 +29,16 @@ const getImageFilenames = artist => {
 
 };
 
-const createThumbnail = (imgFilename, $case) => {
+const createThumbnail = (imgFilename, $case, i) => {
 
   const $img = document.createElement(`img`);
   $img.src = `assets/img/thumbnails/${imgFilename}`;
   $img.alt = `${imgFilename}`;
   $img.width = 100;
   $img.height = 100;
+  $img.classList.add(`case__thumbnail`);
+
+  if (i === 0) $img.classList.add(`selected`);
 
   $img.addEventListener(`click`, e => onThumbnailClick(imgFilename, $case, e));
 
@@ -45,7 +49,15 @@ const createThumbnail = (imgFilename, $case) => {
 const onThumbnailClick = (imgFilename, $case, e) => {
 
   const $thumbnail = e.currentTarget;
-  console.log($thumbnail);
+
+  //reset previous selected thumbnails
+  const $thumbnails = $thumbnail.parentNode.querySelectorAll(`.selected`);
+  for (let i = 0;i < $thumbnails.length;i ++) {
+    $thumbnails[i].classList.remove(`selected`);
+  }
+
+
+  $thumbnail.classList.add(`selected`);
 
   const $img = $case.querySelector(`.case-img`);
   $img.classList.remove(`revealedX`);
