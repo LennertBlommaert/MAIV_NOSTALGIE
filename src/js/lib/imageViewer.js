@@ -42,7 +42,10 @@ const createThumbnail = (imgFilename, $case) => {
 
 };
 
-const onThumbnailClick = (imgFilename, $case) => {
+const onThumbnailClick = (imgFilename, $case, e) => {
+
+  const $thumbnail = e.currentTarget;
+  console.log($thumbnail);
 
   const $img = $case.querySelector(`.case-img`);
   $img.classList.remove(`revealedX`);

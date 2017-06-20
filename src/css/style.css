@@ -118,6 +118,8 @@ main {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 20;
 }
 
 /*-----------------
@@ -127,10 +129,11 @@ main {
 .muse {
   display: flex;
   justify-content: center;
-  min-height: 80rem;
+  margin-bottom: 18rem;
 
   &__description {
-    width: 30vw;
+
+    width: 100%;
 
     &--bold {
       font-weight: bold;
@@ -141,6 +144,7 @@ main {
   }
 
   &__intro {
+    width: 45vw;
     margin-right: 5vw;
     padding-left: 5rem;
     align-self: center;
@@ -162,6 +166,41 @@ main {
 }
 
 .infographic {
+  z-index: -10;
+
+  &__wrapper {
+    width: 62rem;
+    height: 62rem;
+    position: relative;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .5;
+    transition: .5s opacity ease;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  &__description {
+    max-width: 100%;
+    padding: 1rem;
+    border-bottom: solid 1rem var(--pink);
+  }
+}
+
+/*.infographic {
 
   display: flex;
   align-items: flex-end;
@@ -250,7 +289,7 @@ main {
     height: 81.9rem;
   }
 
-}
+}*/
 
 .hotspot {
   opacity: .5;
@@ -267,17 +306,38 @@ main {
 ------------------*/
 
 .story {
-  position: relative;
-  width: 100%;
-  margin-top: 12rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
+  position: relative;
+  display: flex;
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /*
   &__nav {
     position: absolute;
     top: 30rem;
     left: 2.11vw;
+    opacity: 0;
+  }*/
+
+  &__nav {
+    position: fixed;
+    top: 10rem;
+    left: 2.11vw;
+    z-index: 15;
+    opacity: 0;
+    transition: .2s ease opacity;
+
+    & .active {
+      color: red;
+    }
   }
 
   &__content {
@@ -310,7 +370,7 @@ main {
   align-items: center;
   margin-left: 12rem;
   transform: translateX(100%);
-  transition: transform 200ms cubic-bezier(.19, 1, .22, 1);
+  transition: all .6s ease;
 
   &__header {
     margin-left: 2rem;
@@ -356,8 +416,9 @@ main {
   }
 
   &-img {
+    opacity: 0;
     transform: translateX(100%);
-    transition: transform .2s cubic-bezier(.19, 1, .22, 1);
+    transition: all 1s ease;
   }
 }
 
@@ -1061,23 +1122,24 @@ main {
 
   &__img-vinyl {
     position: absolute;
-    z-index: -10;
     right: -13rem;
+    z-index: -10;
+    /*transform: translateX(-50%);*/
 
-    &--large-h {
+    &.large-h {
       position: absolute;
-      z-index: -10;
       top: -13rem;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 25%;
     }
 
-    &--large-v {
+    &.large-v {
       position: absolute;
-      z-index: -10;
       right: -13rem;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 25%;
+    }
+
+    &.playing {
+      animation: 3s rotate linear infinite;
     }
   }
 
@@ -1093,6 +1155,13 @@ main {
       right: .8rem;
       position: absolute;
     }
+  }
+}
+
+@keyframes rotate {
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -1300,10 +1369,12 @@ main {
 ------------------*/
 
 .revealedX {
+  opacity: 1;
   transform: translateX(0);
 }
 
 .revealedY {
+  opacity: 1;
   transform: translateY(0);
 }
 
@@ -1316,7 +1387,58 @@ main {
        MEDIA QUERIES
 ------------------*/
 
+@media (width < 1290px) {
+
+  .muse {
+
+    &__title {
+      font-size: 4.5vw;
+    }
+
+    &__description--bold {
+      font-size: 1.9vw;
+    }
+
+    justify-content: space-around;
+  }
+
+  .infographic {
+
+    &__wrapper {
+      width: 50vw;
+      height: 50vw;
+    }
+  }
+
+}
+
 @media (width < 1000px) {
+
+  .muse {
+    margin-top: 5rem;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+      font-size: 5rem;
+    }
+
+    &__description--bold {
+      font-size: 1.8rem;
+    }
+
+    &__intro {
+      width: 90vw;
+    }
+  }
+
+  .infographic {
+
+    &__wrapper {
+      width: 60vw;
+      height: 60vw;
+    }
+  }
 
   .sticky {
     position: fixed;
@@ -1333,18 +1455,7 @@ main {
     }
   }
 
-  .muse {
-    flex-direction: column;
-
-    &-left {
-      width: 100%;
-    }
-
-    &__description {
-      width: 100%;
-    }
-  }
-
+  /*
   .infographic {
 
     flex-direction: column;
@@ -1374,7 +1485,7 @@ main {
     &__tile--pink {
       height: 25rem;
     }
-  }
+  }*/
 
   .case {
     width: 100%;

@@ -30,6 +30,9 @@ export default url => {
       .attr(`fill`, `#fe6174`)
       .on(`mouseover`, handleHover);
 
+    // const nav = d3.select(`.infographic-nav`);
+    // nav.selectAll()
+
   });
 };
 

@@ -3,11 +3,13 @@
 import React from 'react';
 import {render} from 'react-dom';
 import InfluenceMeterApp from './containers/InfluenceMeterApp';
+import InfographicApp from './containers/InfographicApp';
 import HarmoniumApp from './containers/HarmoniumApp';
 import imageViewer from './lib/imageViewer';
 import infographic from './lib/infographic';
 import audioPlayer from './lib/audioPlayer';
-import stickyNav from './lib/stickyNav';
+// import stickyNav from './lib/stickyNav';
+import sideNav from './lib/sideNav';
 import animateIn from './lib/animateIn';
 import scrollToItem from './lib/scrollToItem';
 
@@ -19,17 +21,25 @@ const init = () => {
   initCases();
   initAlbums();
 
-  render(
-    <InfluenceMeterApp  />,
-    document.querySelector(`.influenceMeterApp-react-mount`)
-  );
+  if (window.innerWidth >= 700) {
+    render(
+      <InfographicApp  />,
+      document.querySelector(`.infographicApp-react-mount`)
+    );
+  }
+
 
   render(
     <HarmoniumApp  />,
     document.querySelector(`.harmoniumApp-react-mount`)
   );
 
-  stickyNav();
+  render(
+    <InfluenceMeterApp  />,
+    document.querySelector(`.influenceMeterApp-react-mount`)
+  );
+
+  sideNav();
 
 };
 

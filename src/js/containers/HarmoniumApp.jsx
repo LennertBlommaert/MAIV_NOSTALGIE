@@ -11,7 +11,10 @@ import CurrentNote from '../components/CurrentNote';
 
 class Harmonium extends Component {
 
+  $visualizer
+
   state = {
+    currentAudio: {},
     audio: [
       {
         id: 1,
@@ -68,22 +71,30 @@ class Harmonium extends Component {
 
     const {audio} = this.state;
 
-    const audioItem = audio.find(a => {
-      return a.id === id;
-    });
+    const pAudioItem = audio.find(a => a.isActive === true);
+    if (pAudioItem) pAudioItem.isActive = !pAudioItem.isActive;
+
+    const audioItem = audio.find(a => a.id === id);
+    audioItem.isActive = !audioItem.isActive;
 
     audioItem.sound.play();
+
+    this.setState({audio: audio, currentAudio: audioItem});
 
   }
 
   render() {
 
-    const {audio} = this.state;
+    const {audio, currentAudio} = this.state;
 
     return (
       <div>
         <Staff onClickNote={this.handleClickNote} audio={audio} />
-        <CurrentNote note={currentNote} />
+        {
+          currentAudio.name !== undefined ?
+            <CurrentNote note={currentAudio.name} />
+          : ``
+        }
       </div>
     );
   }

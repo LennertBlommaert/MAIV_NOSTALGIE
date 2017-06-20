@@ -17,13 +17,16 @@ export default $album => {
 const onButtonClick = $svg => {
 
   const $audioTag = $svg.parentNode.querySelector(`.album__audio-sample`);
+  const $vinyl = $svg.parentNode.parentNode.parentNode.querySelector(`.album__img-vinyl`);
 
   toggleButtonState($svg, $audioTag.paused);
 
   if ($audioTag.paused) {
     $audioTag.play();
+    $vinyl.classList.add(`playing`);
   } else {
     $audioTag.pause();
+    $vinyl.classList.remove(`playing`);
   }
 
 };

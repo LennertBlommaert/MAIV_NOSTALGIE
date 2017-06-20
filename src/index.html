@@ -58,28 +58,30 @@
 <!--
    #MUSE
 -->
-    <section class="muse">
+    <section class="muse" id='muse'>
 
-      <div class="muse-left">
+      <div class="muse__intro">
+        <header class="muse__header">
+          <h1 class="muse__title">The Muse</h1>
+          <h2 class="muse__subtitle subtitle">Nico</h2>
+        </header>
 
-        <div class="muse__intro">
-          <header class="muse__header">
-            <h1 class="muse__title">The Muse</h1>
-            <h2 class="muse__subtitle subtitle">Nico</h2>
-          </header>
         <div class="muse__description">
-            <p class="muse__description--bold">
-            Nico has <strong class="highlighted">inspired</strong> and <strong class="highlighted">influenced</strong> many legendary artist over the years.  From photographers and fashion designers, to film makers, conceptual artists and musicians.
+          <p class="muse__description--bold">
+          Nico has <strong class="highlighted">inspired</strong> and <strong class="highlighted">influenced</strong> many legendary artist over the years.  From photographers and fashion designers, to film makers, conceptual artists and musicians.
           </p>
           <p>
             She was a composer,  fashion model, actress but above all, she had a great influence on the greatest of her generation.
           </p>
         </div>
-        </div>
+      </div>
 
+        <div class='infographicApp-react-mount'></div>
+
+        <!--
         <div class="infographic">
           <ul class="infographic-nav">
-            <li class="infographic-nav__item"></li>
+            li class="infographic-nav__item"></li>
             <li class="infographic-nav__item"></li>
             <li class="infographic-nav__item"></li>
             <li class="infographic-nav__item"></li>
@@ -117,7 +119,7 @@
           width="443" height="454"
         />
         <svg class='infographic__overlay'></svg>
-      </div>
+      </div>-->
 
     </section>
 
@@ -127,19 +129,25 @@
 
     <section class="story">
 
+      <nav class="story__nav">
+        <ul class="story__nav-list"></ul>
+        <!-- <img src="assets/img/navigator.png" alt=""> -->
+      </nav>
+
+      <div className='story__wrapper'>
+
       <header class="story__header">
         <h1 class="story__title">Nico's story</h1>
         <h2 class="story__subtitle subtitle">And her influence as a muse</h2>
+        <svg class="story__divider" width="75" height="20"
+            xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="75" height="20" fill="#ff6174" />
+        </svg>
       </header>
 
-      <svg class="story__divider" width="75" height="20"
-          xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="0" width="75" height="20" fill="#ff6174" />
-      </svg>
-
-      <nav class="story__nav">
+      <!-- <nav class="story__nav">
         <img src="assets/img/navigator.png" alt="">
-      </nav>
+      </nav> -->
 
       <div class='story__content'>
 
@@ -186,7 +194,7 @@
           </article>
 
           <!-- #COCO CHANEL -->
-          <article class="case case--chanel " id="chanel">
+          <article class="case case--chanel " id="Chanel">
             <img
               class="case-img" src="assets/img/chanel_1.jpg"
               width="430" height="420"
@@ -250,7 +258,7 @@
           </article>
 
           <!-- #FREDERICO FELINI -->
-          <article class="case case--felini " id="felini">
+          <article class="case case--felini " id="Felini">
             <img
               class="case-img"
               src="assets/img/felini_1.jpg"
@@ -305,7 +313,7 @@
           </article>
 
           <!-- #BOB DYLAN -->
-          <article class="case case--dylan " id="dylan">
+          <article class="case case--dylan " id="Dylan">
             <img
               class="case-img"
               src="assets/img/dylan_1.jpg"
@@ -362,7 +370,7 @@
           </article>
 
           <!-- #ANDY WARHOL-->
-          <article class="case case--warhol " id="warhol">
+          <article class="case case--warhol " id="Warhol">
             <img
               class="case-img"
               src="assets/img/warhol_1.jpg"
@@ -421,7 +429,7 @@
           </article>
 
           <!-- #VELVET NDERGROUND-->
-          <article class="case case--underground " id="underground">
+          <article class="case case--underground" id="Underground">
             <img
               class="case-img"
               src="assets/img/underground_1.jpg"
@@ -508,7 +516,7 @@
           </article>
 
           <!-- #LEONARD COHEN-->
-          <article class="case case--cohen " id="cohen">
+          <article class="case case--cohen " id="Cohen">
             <img
               class="case-img"
               src="assets/img/cohen_1.jpg"
@@ -604,7 +612,7 @@
           </article>
 
           <!-- #PHILIPPE GAREL-->
-          <article class="case case--garel  " id="garel">
+          <article class="case case--garel  " id="Garel">
             <img
               class="case-img"
               src="assets/img/garel_1.jpg"
@@ -673,7 +681,7 @@
               </div>
 
               <img
-                class="album__img-vinyl--large-h"
+                class="album__img-vinyl large-h"
                 src="assets/img/vinyl.png"
                 alt="vinyl disc"
                 width="258" height="259"
@@ -701,7 +709,7 @@
           </article>
 
           <!-- #SIOUXSIE AND THE BANSHEES -->
-          <article class="case case--siouxsie " id="siouxsie">
+          <article class="case case--siouxsie " id="Siouxsie">
             <img
               class="case-img"
               src="assets/img/siouxsie_1.jpg"
@@ -724,7 +732,6 @@
                   With its stark sound, somber lyrics, and Nico’s deliberate change in her look,
                   the album became a crucial music and visual prototype for the gothic rock movement.
                   Gothic rock also creates a dark atmosphere by drawing influence from the drones used by the Velvet Underground.
-                  which is sometimes described as a protopunk band.
                 </p>
                 <p>
                   Siouxsie Sioux’ foreboding vocals are influenced by Nico’s distinct dark style of singing.
@@ -768,7 +775,7 @@
                 </div>
 
                 <img
-                  class="album__img-vinyl--large-v"
+                  class="album__img-vinyl large-v"
                   src="assets/img/vinyl.png"
                   alt="vinyl disc"
                   width="258" height="259"
@@ -868,6 +875,7 @@
           </article>
 
 
+      </div>
       </div>
     </section>
 
