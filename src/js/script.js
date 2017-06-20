@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-filename-extension */
 
-import React from 'react';
-import {render} from 'react-dom';
-import InfluenceMeterApp from './containers/InfluenceMeterApp';
-import InfographicApp from './containers/InfographicApp';
-import HarmoniumApp from './containers/HarmoniumApp';
+// import React from 'react';
+// import {render} from 'react-dom';
+// import InfluenceMeterApp from './containers/InfluenceMeterApp';
+// import InfographicApp from './containers/InfographicApp';
+// import HarmoniumApp from './containers/HarmoniumApp';
 import imageViewer from './lib/imageViewer';
 import infographic from './lib/infographic';
 import audioPlayer from './lib/audioPlayer';
@@ -18,29 +18,35 @@ const init = () => {
 
   initAutoScroll();
   infographic(`assets/data/features.csv`);
+  initGlueImages();
   initCases();
   initAlbums();
-
-  if (window.innerWidth >= 700) {
-    render(
-      <InfographicApp  />,
-      document.querySelector(`.infographicApp-react-mount`)
-    );
-  }
-
-
-  render(
-    <HarmoniumApp  />,
-    document.querySelector(`.harmoniumApp-react-mount`)
-  );
-
-  render(
-    <InfluenceMeterApp  />,
-    document.querySelector(`.influenceMeterApp-react-mount`)
-  );
+  //
+  // if (window.innerWidth >= 700) {
+  //   render(
+  //     <InfographicApp  />,
+  //     document.querySelector(`.infographicApp-react-mount`)
+  //   );
+  // }
+  //
+  //
+  // render(
+  //   <HarmoniumApp  />,
+  //   document.querySelector(`.harmoniumApp-react-mount`)
+  // );
+  //
+  // render(
+  //   <InfluenceMeterApp  />,
+  //   document.querySelector(`.influenceMeterApp-react-mount`)
+  // );
 
   sideNav();
 
+};
+
+const initGlueImages = () => {
+  const $img = document.querySelectorAll(`.glue__img`);
+  animateIn($img, `revealedAll`);
 };
 
 const initAutoScroll = () => {

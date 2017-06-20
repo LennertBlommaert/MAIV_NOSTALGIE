@@ -319,6 +319,10 @@ main {
     align-items: center;
   }
 
+  &__header {
+    margin-left: 7vw;
+  }
+
   /*
   &__nav {
     position: absolute;
@@ -370,7 +374,7 @@ main {
   align-items: center;
   margin-left: 12rem;
   transform: translateX(100%);
-  transition: all .6s ease;
+  transition: all 1s ease;
 
   &__header {
     margin-left: 2rem;
@@ -418,7 +422,7 @@ main {
   &-img {
     opacity: 0;
     transform: translateX(100%);
-    transition: all 1s ease;
+    transition: all 1.5s ease;
   }
 }
 
@@ -429,6 +433,14 @@ main {
 .glue {
   width: 100%;
   display: flex;
+
+  &__img {
+    transform: translateY(20%);
+    opacity: 0;
+    transition:
+      opacity .5s ease-in,
+      transform 1s ease;
+  }
 
   &__text {
     max-width: 45rem;
@@ -465,32 +477,17 @@ main {
   &__img-paris {
     left: 10%;
     bottom: -1%;
-    transform: translateY(100%);
-    opacity: 0;
-    transition:
-      opacity .2s ease-in,
-      transform 1000ms cubic-bezier(.19, 1, .22, 1);
   }
 
   &__img-berlin {
     left: 24%;
     top: -5%;
     bottom: -1%;
-    transform: translate(-10rem, 60rem);
-    opacity: 0;
-    transition:
-      opacity .1s ease-in,
-      transform 1000ms cubic-bezier(.19, 1, .22, 1);
   }
 
   &__img-nikon {
     left: 21%;
     bottom: -5rem;
-    transform: translateX(-5.5rem);
-    opacity: 0;
-    transition:
-      opacity .2s ease-in,
-      transform 1000ms cubic-bezier(.19, 1, .22, 1);
   }
 }
 
@@ -594,6 +591,7 @@ main {
     display: flex;
     justify-content: flex-end;
     position: relative;
+    overflow: hidden;
   }
 
   &__img-liberty {
@@ -606,6 +604,7 @@ main {
     display: flex;
     align-items: flex-end;
     padding-top: 7rem;
+    overflow: hidden;
   }
 
   &__content {
@@ -1637,6 +1636,18 @@ main {
       width: 100%;
     }
   }
+}
+
+@media (width < 700px) {
+
+  .infographicApp-react-mount {
+    display: none;
+  }
+
+  .muse {
+    margin-bottom: 5rem;
+  }
+
 }
 
 @media (width < 500px) {
