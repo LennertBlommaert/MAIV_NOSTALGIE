@@ -19,6 +19,15 @@
   --box-shadow: {
     box-shadow: .5rem .5rem .5rem rgba(0, 0, 0, .4);
   }
+
+  --album__container-large-h: {
+    background: url(../assets/img/glue-8-bg.jpg);
+    height: 80rem;
+    justify-content: space-around;
+    padding: 3rem 0;
+    flex-direction: column;
+    background-size: cover;
+  }
 }
 
 /*---------
@@ -29,7 +38,6 @@ body {
   font-family: Helvetica;
   font-size: 1.6rem;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 strong { font-weight: bold; }
@@ -61,6 +69,7 @@ h1 {
   margin: 0 auto;
   position: relative;
   height: 63rem;
+  overflow: hidden;
 
   & .logo {
     display: block;
@@ -132,7 +141,7 @@ h1 {
 ------------------*/
 
 main {
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 
 /* SCROLL INDICATOR */
@@ -260,8 +269,8 @@ main {
 
   &__wrapper {
     position: relative;
-    width: 100%;
     margin-top: 12rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -347,7 +356,8 @@ main {
 .case {
   display: flex;
   align-items: center;
-  margin-left: 12rem;
+  justify-content: center;
+  align-self: flex-end;
 
   &.translated {
     transform: translateX(100%);
@@ -358,11 +368,30 @@ main {
     margin-left: 2rem;
   }
 
+  &__title {
+    font: 4.8rem DIN;
+    color: var(--pink);
+    text-transform: uppercase;
+  }
+
   &__content {
+    display: flex;
+    align-items: center;
     position: relative;
     background: var(--dark-grey);
     width: 45vw;
     padding: 10rem;
+
+    &-wrapper {
+      width: 100%;
+    }
+  }
+
+  &__thumbnails {
+    position: absolute;
+    left: -2rem;
+    display: flex;
+    flex-direction: column;
   }
 
   &__thumbnail {
@@ -378,21 +407,6 @@ main {
     }
   }
 
-  &__thumbnails {
-    position: absolute;
-    left: -1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__title {
-    font: 4.8rem DIN;
-    color: var(--pink);
-    text-transform: uppercase;
-  }
-
   &__subtitle {
     font: 2.4rem Lora;
     text-transform: uppercase;
@@ -402,15 +416,18 @@ main {
 
   &__description {
     color: white;
-    max-width: 50rem;
+    max-width: 100%;
 
     & p {
       margin-top: 3.6rem;
-      margin-left: 8.5rem;
+      margin-left: 5vw;
     }
   }
 
   &-img {
+
+    max-width: 100%;
+    height: inherit;
 
     &.translated {
       opacity: 0;
@@ -436,8 +453,12 @@ main {
       transform 1s ease;
   }
 
-  &__text {
+  &__content {
     max-width: 45rem;
+  }
+
+  &__text {
+    width: 100%;
     margin-top: 4rem;
   }
 }
@@ -454,14 +475,15 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: -25vw;
+    margin-left: -30vw;
   }
 
   &__figure {
     position: absolute;
     right: 0;
     width: 45vw;
-    height: 100%;
+    /*height: 100%;*/
+    height: 42rem;
   }
 
   &__img-berlin, &__img-paris, &__img-nikon {
@@ -474,7 +496,7 @@ main {
   }
 
   &__img-berlin {
-    left: 24%;
+    right: 24%;
     top: -5%;
     bottom: -1%;
   }
@@ -482,6 +504,10 @@ main {
   &__img-nikon {
     left: 21%;
     bottom: -5rem;
+  }
+
+  & .glue__text {
+    max-width: 45rem;
   }
 }
 
@@ -551,7 +577,7 @@ main {
 .glue--3 {
   width: 78vw;
   margin-top: 10rem;
-  justify-content: flex-end;
+  /*justify-content: flex-end;*/
 
   &__content {
     padding-right: 5rem;
@@ -663,11 +689,11 @@ main {
   flex-direction: column;
 
   &__content {
-    width: 50%;
+    width: 40vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5rem 0 0 10rem;
+    padding: 0 10vw;
   }
 
   &__figure {
@@ -705,6 +731,9 @@ main {
   &__bot-container {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin-top: -1rem;
+    margin-bottom: 12rem;
   }
 }
 
@@ -712,13 +741,14 @@ main {
 
 .glue--7 {
 
+  margin-top: -6rem;
+  margin-bottom: 3rem;
   display: flex;
   justify-content: flex-end;
   position: relative;
 
   &__album {
     position: absolute;
-    top: -6rem;
     right: 2vw;
   }
 
@@ -734,7 +764,8 @@ main {
 
 .glue--8 {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
   margin-top: 10rem;
 
   &__bot-container {
@@ -743,7 +774,7 @@ main {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding: 8rem 8rem 0;
+    padding: 0 8rem;
   }
 
   &__figure {
@@ -752,10 +783,6 @@ main {
     max-width: 45rem;
     height: 20rem;
     margin-top: 8rem;
-  }
-
-  &__album-container {
-    margin-right: 10rem;
   }
 }
 
@@ -768,7 +795,7 @@ main {
   align-items: center;
 
   &__container-top {
-    width: 91.5rem;
+    width: 90%;
   }
 
   &__container-mid {
@@ -845,17 +872,23 @@ main {
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     margin-top: 10rem;
     position: relative;
 
+    &-figure {
+      width: 40%;
+      height: 53rem;
+    }
+
     &-figure-black {
+      z-index: 10;
       background: black;
       display: flex;
       position: relative;
-      width: 34rem;
-      height: 53rem;
+      width: 70%;
+      height: 100%;
       align-items: flex-end;
       justify-content: flex-end;
     }
@@ -884,8 +917,8 @@ main {
 
     &-figure-dots {
       background: var(--dots);
-      width: 27.5rem;
-      height: 30rem;
+      width: 90%;
+      height: 65%;
     }
   }
 
@@ -924,6 +957,7 @@ main {
 }
 
 .harmonium {
+  width: 90vw;
   margin-top: 14rem;
   display: flex;
   flex-direction: column;
@@ -990,8 +1024,8 @@ main {
 
   &__figure-img {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 20%;
+    transform: translateY(20%);
     top: -10rem;
   }
 
@@ -1100,17 +1134,13 @@ main {
     position: relative;
 
     &.large-h {
-      background: url(../assets/img/glue-8-bg.jpg);
-      height: 80rem;
-      justify-content: space-around;
-      padding: 3rem 0;
-      flex-direction: column;
-      background-size: cover;
+      @apply(--album__container-large-h);
     }
 
     &.large-v {
+      margin-top: 5rem;
       background: url(../assets/img/glue-9-bg.jpg);
-      width: 91.5rem;
+      width: 100%;
       height: 46rem;
       justify-content: space-around;
       background-size: cover;
@@ -1146,20 +1176,20 @@ main {
 
   &__img-vinyl {
     position: absolute;
-    right: -13rem;
+    /*right: -13rem;*/
     z-index: -10;
     /*transform: translateX(-50%);*/
 
     &.large-h {
       position: absolute;
       top: -13rem;
-      left: 25%;
+      /*left: 25%;*/
     }
 
     &.large-v {
       position: absolute;
-      right: -13rem;
-      top: 25%;
+      /*left: 35%;*/
+      top: -28%;
     }
 
     &.playing {
@@ -1201,8 +1231,13 @@ main {
   flex-direction: column;
   align-items: center;
 
+  &__interactive {
+    margin: 0 auto;
+  }
+
   & .influenceMeterApp-react-mount {
     width: 70vw;
+    margin: 0 auto;
   }
 
   &-unselected-artists, & .bar {
@@ -1229,6 +1264,10 @@ main {
     margin-left: 10vw;
   }
 
+  &__header {
+    margin-left: 3vw;
+  }
+
   &__subtitle {
     margin: 3rem 0 3rem 10vw;
   }
@@ -1251,6 +1290,7 @@ main {
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     color: black;
+    max-width: 95vw;
   }
 
   &__result {
@@ -1481,9 +1521,144 @@ main {
     }
   }
 
+  .case {
+
+    &-img {
+      position: relative;
+      right: 0;
+    }
+
+    &__header {
+      margin-left: 6rem;
+    }
+
+    &__description {
+      width: 95%;
+
+      & p {
+        margin-left: 3vw;
+      }
+    }
+
+    &__thumbnails {
+      left: -3rem;
+    }
+
+    &__content {
+      width: 60vw;
+      padding: 10rem 8rem;
+    }
+  }
+
+  .glue--7 {
+    align-items: center;
+
+    &__album {
+      top: 0;
+    }
+
+    &__content {
+      padding-right: 1vw;
+      padding-left: 15vw;
+    }
+  }
+  /*
+    .glue--9__container-bot-figure {
+      width: 30vw;
+      height: inherit;
+    }*/
+
+  .glue--9__container-bot-figure-nico {
+    width: 30vw;
+    height: 35vw;
+  }
+
+  .glue--9__container-bot-content {
+
+    & .glue__text {
+      font-size: 2vw;
+    }
+  }
+
+}
+
+@media (width < 1190px) {
+
+  .story {
+
+    &__content {
+      align-items: center;
+    }
+  }
+
+  .harmonium {
+
+    & svg {
+      width: 90vw;
+    }
+
+    &__subtitle {
+      margin-left: 0;
+    }
+  }
+
+  .case {
+
+    &__header {
+      margin-left: 1vw;
+    }
+
+    & p {
+      margin-left: 1vw;
+    }
+  }
+
+}
+
+@media (width < 1060px) {
+
+  .glue--7 {
+
+    flex-direction: column;
+
+    &__content {
+      padding: 0;
+    }
+  }
 }
 
 @media (width < 1000px) {
+
+  .story {
+
+    &__header {
+      margin-left: 2vw;
+      width: 90%;
+    }
+
+    &__subtitle {
+      margin-left: 0;
+    }
+  }
+
+  .case {
+    width: 80vw;
+    flex-direction: column;
+    justify-content: center;
+    right: 0;
+
+    &__content {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__thumbnails {
+      flex-direction: row;
+      top: -5rem;
+      left: 0;
+    }
+  }
 
   .meter__subtitle {
     font-size: 2rem;
@@ -1535,21 +1710,6 @@ main {
     }
   }
 
-  .case {
-    width: 100%;
-    flex-direction: column;
-
-    &__content {
-      width: 100%;
-    }
-
-    &__thumbnails {
-      top: 0;
-      left: 5vw;
-      flex-direction: row;
-    }
-  }
-
   .footer {
 
     &-content {
@@ -1572,12 +1732,29 @@ main {
     }
   }
 
+  .glue--9__container-mid-bg {
+    margin-top: 5rem;
+  }
+
   .glue {
     flex-direction: column;
   }
 
   .glue--1 {
     flex-direction: column;
+    margin-bottom: 5rem;
+
+    &__story {
+      margin-left: 0;
+    }
+
+    &__figure {
+      display: none;
+    }
+  }
+
+  .glue--3__content {
+    margin: 5rem auto;
   }
 
   .glue--4 {
@@ -1592,38 +1769,60 @@ main {
     &__content {
       width: 100%;
     }
+
+    &__figure--right {
+      position: relative;
+      right: 20vw;
+    }
   }
 
   .glue--6 {
 
     &__bot-container {
       flex-direction: column;
+      align-items: center;
+      margin: 4rem auto 6rem;
     }
 
     &__content {
-      width: 100vw;
+      width: 80vw;
     }
   }
 
   .glue--7 {
 
     &__content {
-      width: 100vw;
+      width: 80vw;
     }
   }
 
   .glue--8 {
 
+    margin-bottom: 5rem;
+
     &__bot-container {
       width: 100%;
+      padding-top: 1rem;
     }
 
     &__content {
       width: 100%;
     }
+
+    &__figure {
+      display: none;
+    }
   }
 
   .glue--9 {
+
+    & .glue__text {
+      padding: 2rem;
+    }
+
+    & .album--large-v-descriptions {
+      margin: 3rem auto;
+    }
 
     &__container-mid-top {
       flex-direction: column;
@@ -1641,21 +1840,20 @@ main {
     &__container-mid-bot {
       flex-direction: column;
     }
+
+    &__container-bot-content .glue__text {
+      font-size: 2rem;
+    }
   }
 
   .harmonium {
-    width: 100vw;
 
-    &__top {
+    /*&__top {
       flex-direction: column;
-    }
+    }*/
 
     &__top-left {
       margin: 0;
-    }
-
-    &__instrument {
-      width: 100vw;
     }
 
     &__subtitle {
@@ -1665,15 +1863,19 @@ main {
     &__text {
       width: 100%;
       padding: 5rem;
+      padding-left: 0;
     }
-
-    &__figure-img-container {
-      width: 100%;
-    }
+    /*
+      &__figure-img-container {
+        width: 100%;
+      }*/
 
     &__figure-img {
+      left: 1%;
       top: 1rem;
       z-index: 10;
+      width: 30vw;
+      height: inherit;
     }
   }
 
@@ -1694,7 +1896,118 @@ main {
   }
 }
 
+@media (width < 780px) {
+
+  .album__container.large-v.glue--9__album-container {
+    width: 100%;
+  }
+
+  .story__nav {
+    display: none;
+  }
+
+  .case {
+    width: 90vw;
+
+    &__content {
+      padding: 8rem 6rem;
+    }
+  }
+
+  .harmonium {
+    width: 95vw;
+
+    &__bg {
+      background: none;
+      width: 14rem;
+      height: 24rem;
+    }
+
+    &__note {
+      padding: 2rem;
+      font-size: 3rem;
+    }
+
+    & svg {
+      width: 100%;
+    }
+  }
+
+  .harmoniumApp-react-mount div {
+    /*flex-direction: column;*/
+  }
+
+  .harmonium__figure {
+    display: none;
+  }
+
+  .album__container {
+
+    margin: 20rem auto 2rem;
+
+    & .album__img-vinyl {
+      top: -13rem;
+    }
+
+    &.large-v {
+      @apply(--album__container-large-h);
+      width: 46rem;
+
+      & .album__img-vinyl {
+        position: absolute;
+        top: -13rem;
+        /*left: 25%;*/
+      }
+    }
+  }
+
+  .glue--9__container-bot {
+    margin-top: -6rem;
+  }
+
+  .glue--9__container-bot-content {
+    top: 13rem;
+    position: absolute;
+    width: 90%;
+    height: 38rem;
+  }
+
+  .glue--9__container-bot-figure {
+
+    &-black {
+      background: none;
+    }
+
+    &-roman, &-dots {
+      display: none;
+    }
+
+    &-pink {
+      display: none;
+    }
+
+    &-nico {
+      width: 23rem;
+      height: 27rem;
+    }
+  }
+}
+
 @media (width < 700px) {
+
+  .harmoniumApp-react-mount div {
+    flex-direction: column;
+  }
+
+  .harmonium {
+
+    &__bg {
+      width: 7.5rem;
+      height: 7.5rem;
+      position: absolute;
+      top: 0;
+    }
+  }
 
   .infographicApp-react-mount {
     display: none;
@@ -1710,9 +2023,35 @@ main {
 
 }
 
+@media (width < 635px) {
+
+  .harmonium {
+    display: none;
+  }
+
+  .glue--6__img-cale, .glue--6__img-reed {
+    width: 40vw;
+    height: inherit;
+  }
+
+  .glue--6__img-cale {
+    left: -2rem;
+  }
+
+  .glue--6__img-reed {
+    right: -2rem;
+  }
+}
+
 @media (width < 500px) {
 
+  .album__container {
+    width: 90vw;
+  }
+
   .case {
+
+    width: 100%;
 
     &__content {
       padding-left: 12vw;
@@ -1732,4 +2071,51 @@ main {
     font-size: 1.6rem;
   }
 
+  .glue--9__container-bot-content {
+    height: 45rem;
+    top: 8rem;
+  }
+
+  .glue--9__container-bot-figure-nico {
+    position: absolute;
+    left: 0%;
+  }
+
+  .glue--8__bot-container {
+    padding: 1rem 2rem;
+  }
+
+  .glue--3__img-stroller {
+    display: none;
+  }
+}
+
+@media (width < 460px) {
+
+  .album__container, .album__container.large-v, .album__container.large-h {
+    width: 92vw;
+  }
+
+  .case__title {
+    font-size: 10vw;
+  }
+}
+
+@media (width < 390px) {
+
+  .footer__left {
+    width: 100%;
+  }
+
+  .glue--9__container-mid-top-dots {
+    transform: scale(.6);
+  }
+
+  .glue--9__container-mid-top {
+    margin-top: 0;
+  }
+
+  .glue--9__container-mid-top-text .glue__text {
+    margin-top: 0;
+  }
 }
