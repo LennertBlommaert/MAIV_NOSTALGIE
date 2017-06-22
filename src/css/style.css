@@ -267,7 +267,6 @@ main {
 ------------------*/
 
 .story {
-
   position: relative;
   display: flex;
 
@@ -1033,29 +1032,11 @@ main {
     transform: translateY(20%);
     top: -10rem;
   }
-  /*
-  &__instrument {
-    background: url(../assets/img/harmonium-strings.png);
-    width: 80vw;
-    height: 22.1rem;
-    position: absolute;
-  }*/
-
-  /*
-  &__bot {
-    width: 100%;
-    height: 36rem;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
-  }*/
 
   & .harmoniumApp-react-mount {
     width: 100%;
     height: 36rem;
     position: relative;
-    /*display: flex;
-    justify-content: flex-end;*/
 
     & div {
       display: flex;
@@ -1152,6 +1133,29 @@ main {
     }
   }
 
+  &__img-vinyl {
+    position: absolute;
+    /*right: -13rem;*/
+    z-index: -10;
+    /*transform: translateX(-50%);*/
+
+    &.large-h {
+      position: absolute;
+      top: -13rem;
+      /*left: 25%;*/
+    }
+
+    &.large-v {
+      position: absolute;
+      /*left: 35%;*/
+      top: -28%;
+    }
+
+    &.playing {
+      animation: 3s rotate linear infinite;
+    }
+  }
+
   &__audio-sample {
     position: absolute;
     width: 100%;
@@ -1179,29 +1183,6 @@ main {
     }
   }
 
-  &__img-vinyl {
-    position: absolute;
-    /*right: -13rem;*/
-    z-index: -10;
-    /*transform: translateX(-50%);*/
-
-    &.large-h {
-      position: absolute;
-      top: -13rem;
-      /*left: 25%;*/
-    }
-
-    &.large-v {
-      position: absolute;
-      /*left: 35%;*/
-      top: -28%;
-    }
-
-    &.playing {
-      animation: 3s rotate linear infinite;
-    }
-  }
-
   &__cover-container {
     position: relative;
     display: flex;
@@ -1209,6 +1190,7 @@ main {
     justify-content: center;
     width: 29rem;
     height: 29rem;
+    cursor: pointer;
 
     & svg {
       top: .8rem;
@@ -1253,6 +1235,8 @@ main {
   &-unselected-artists {
     width: 100%;
     margin: 0 auto 2rem;
+    font: 1.6rem DIN;
+    text-transform: uppercase;
 
     & img {
       width: 11.5vw;
@@ -1324,6 +1308,8 @@ main {
       position: absolute;
       bottom: 1rem;
       color: white;
+
+      background: rgba(0, 0, 0, .2);
     }
   }
 
@@ -1707,7 +1693,7 @@ main {
     }
   }
 
-  .sticky {
+  /*.sticky {
     position: fixed;
     top: 0;
     left: 0;
@@ -1720,7 +1706,7 @@ main {
     & img {
       display: none;
     }
-  }
+  }*/
 
   .footer {
 
@@ -2033,6 +2019,10 @@ main {
     font-size: 3rem;
   }
 
+  .glue--3__content {
+    padding-right: 0;
+  }
+
 }
 
 @media (width < 635px) {
@@ -2103,6 +2093,10 @@ main {
 }
 
 @media (width < 460px) {
+
+  .glue--2__story {
+    padding: 3rem 4rem;
+  }
 
   .album__container, .album__container.large-v, .album__container.large-h {
     width: 92vw;

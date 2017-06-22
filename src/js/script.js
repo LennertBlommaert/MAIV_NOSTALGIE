@@ -6,9 +6,7 @@ import InfluenceMeterApp from './containers/InfluenceMeterApp';
 import InfographicApp from './containers/InfographicApp';
 import HarmoniumApp from './containers/HarmoniumApp';
 import imageViewer from './lib/imageViewer';
-// import infographic from './lib/infographic';
 import audioPlayer from './lib/audioPlayer';
-// import stickyNav from './lib/stickyNav';
 import sideNav from './lib/sideNav';
 import animateIn from './lib/animateIn';
 import scrollToItem from './lib/scrollToItem';
@@ -17,10 +15,23 @@ import scrollToItem from './lib/scrollToItem';
 const init = () => {
 
   initAutoScroll();
-  // infographic(`assets/data/features.csv`);
   initGlueImages();
   initCases();
   initAlbums();
+
+  handleWindowResize();
+
+  render(
+    <InfluenceMeterApp  />,
+    document.querySelector(`.influenceMeterApp-react-mount`)
+  );
+
+  sideNav();
+
+  window.addEventListener(`resize`, handleWindowResize);
+};
+
+const handleWindowResize = () => {
 
   if (window.innerWidth >= 700) {
     render(
@@ -35,14 +46,6 @@ const init = () => {
       document.querySelector(`.harmoniumApp-react-mount`)
     );
   }
-
-  render(
-    <InfluenceMeterApp  />,
-    document.querySelector(`.influenceMeterApp-react-mount`)
-  );
-
-  sideNav();
-
 };
 
 const initGlueImages = () => {

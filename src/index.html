@@ -8,35 +8,12 @@
   <meta name="author" content="Emile Adam, Lennert Blommaert">
   <meta name="description" content="Nico is known for her time as a vocalist in the Velvet Underground’s debut, but she was also a composer,  fashion model, actress and above all, a big influence on several of the greatest artistic talents of her time. See how a generation of artists was smitten with her, and how she became an generations to come on this tribute page.">
   <meta name="keywords" content="nostalgie, radio, tribute, remembering, nico">
-  <script>
-
-    WebFontConfig = {
-      // https://github.com/typekit/webfontloader/blob/master/README.md
-      custom: {
-          families: ['DINAlternateBold'],
-          urls: ['assets/fonts/DINAlternateBold/DINAlternateBold.css']
-      },
-      google: {
-        families: ['Lora']
-      }
-    };
-
-    (function(d) {
-    var wf = d.createElement('script'), s = d.scripts[0];
-    wf.async = true;
-    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
-    s.parentNode.insertBefore(wf, s);
-    })(document);
-
-  </script>
-
-
 </head>
 
 <body>
 
   <header class="header">
-    <video class="header__video" width="1920" height="630" poster="assets/img/header.jpg" autoplay loop>
+    <video class="header__video" width="1920" height="630" poster="assets/img/header.jpg" autoplay loop muted>
       <source src="assets/video/mood.mp4" type="video/mp4"/>
     </video>
     <article class="header__content">
@@ -82,6 +59,28 @@
         <div class='infographicApp-react-mount'></div>
 
     </section>
+
+    <script>
+
+      WebFontConfig = {
+        // https://github.com/typekit/webfontloader/blob/master/README.md
+        custom: {
+            families: ['DINAlternateBold'],
+            urls: ['assets/fonts/DINAlternateBold/DINAlternateBold.css']
+        },
+        google: {
+          families: ['Lora']
+        }
+      };
+
+      (function(d) {
+      var wf = d.createElement('script'), s = d.scripts[0];
+      wf.async = true;
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
+      s.parentNode.insertBefore(wf, s);
+      })(document);
+
+    </script>
 
  <!--
   #STORY
@@ -131,25 +130,39 @@
               </p>
             </div>
             <div class="glue--1__figure">
-              <img
-                class="glue--1__img-nikon glue__img"
-                src="assets/img/nikon.png"
-                alt="Paris"
-                width="280" height="284"
-              />
 
-              <img
-                class="glue--1__img-berlin glue__img"
-                src="assets/img/berlin.png"
-                alt="Paris"
-                width="345" height="217"
-              />
-              <img
-                class="glue--1__img-paris glue__img"
-                src="assets/img/eiffel.png"
-                alt="Paris"
-                width="278" height="405"
-              />
+              <picture>
+                <source media="(max-width: 1000px)" srcset="assets/img/default.gif" />
+                <source media="(min-width: 1000px)" srcset="assets/img/nikon.png" />
+                <img
+                  class="glue--1__img-nikon glue__img"
+                  src="assets/img/nikon.png"
+                  alt="Paris"
+                  width="280" height="284"
+                />
+              </picture>
+
+              <picture>
+                <source media="(max-width: 1000px)" srcset="assets/img/default.gif" />
+                <source media="(min-width: 1000px)" srcset="assets/img/berlin.png" />
+                <img
+                  class="glue--1__img-berlin glue__img"
+                  src="assets/img/berlin.png"
+                  alt="Paris"
+                  width="345" height="217"
+                />
+              </picture>
+
+              <picture>
+                <source media="(max-width: 1000px)" srcset="assets/img/default.gif" />
+                <source media="(min-width: 1000px)" srcset="assets/img/eiffel.png" />
+                <img
+                  class="glue--1__img-paris glue__img"
+                  src="assets/img/eiffel.png"
+                  alt="Paris"
+                  width="278" height="405"
+                />
+              </picture>
             </div>
           </article>
 
@@ -263,12 +276,16 @@
               </p>
             </div>
             <div class="glue--3__figure glue__img">
-              <img
-                class="glue--3__img-stroller"
-                src="assets/img/stroller.jpg"
-                alt="Stroller"
-                width="219" height="245"
-              />
+              <picture>
+                <source media="(max-width: 500px)" srcset="assets/img/default.gif" />
+                <source media="(min-width: 500px)" srcset="assets/img/stroller.jpg" />
+                <img
+                  class="glue--3__img-stroller"
+                  src="assets/img/stroller.jpg"
+                  alt="Stroller"
+                  width="219" height="245"
+                />
+              </picture>
               <img
                 class="glue--3__img-nico-ari"
                 src="assets/img/nico-ari.jpg"
@@ -577,11 +594,16 @@
               </div>
               <div class="harmonium__figure">
                 <div class="harmonium__figure-img-container">
-                  <img
-                  class="harmonium__figure-img glue__img"
-                  src="assets/img/harmonium2.png"
-                  alt="Harmonium"
-                  width="349" height="236">
+                  <picture>
+                    <source media="(max-width: 780px)" srcset="assets/img/default.gif" />
+                    <source media="(min-width: 780px)" srcset="assets/img/harmonium2.png" />
+                    <img
+                      class="harmonium__figure-img glue__img"
+                      src="assets/img/harmonium2.png"
+                      alt="Harmonium"
+                      width="349" height="236"
+                    />
+                  </picture>
                 </div>
               </div>
             </div>
@@ -832,15 +854,18 @@
                 <div class="glue--9__container-bot-figure-pink"></div>
 
                 <div class="glue--9__container-bot-figure-black">
-                  <img
-                    class="glue--9__container-bot-figure-roman   glue__img"
-                    src="assets/img/glue-9-roman.png"
-                    alt="muse style"
-                    width="140"
-                    height="517"
-                  />
-                  <div class="glue--9__container-bot-figure-dots glue__img">
-                  </div>
+                  <picture>
+                    <source media="(max-width: 780px)" srcset="assets/img/default.gif" />
+                    <source media="(min-width: 780px)" srcset="assets/img/glue-9-roman.png" />
+                    <img
+                      class="glue--9__container-bot-figure-roman glue__img"
+                      src="assets/img/glue-9-roman.png"
+                      alt="muse style"
+                      width="140"
+                      height="517"
+                    />
+                  </picture>
+                  <div class="glue--9__container-bot-figure-dots glue__img"></div>
                   <img
                     class="glue--9__container-bot-figure-nico"
                     src="assets/img/glue-9-nico.png"
@@ -855,7 +880,7 @@
                    in <strong>search</strong> of <strong>inspiration</strong>. In this way <strong>Nico</strong> is still a muse,
                    and will continue to be, as her icon grows ever larger.
                 </p>
-                <div class="glue--9__container-bot-content-bg   glue__img"></div>
+                <div class="glue--9__container-bot-content-bg glue__img"></div>
               </div>
             </div>
           </article>
@@ -1010,7 +1035,6 @@
       </div>
     </div>
   </footer>
-
 </body>
 
 </html>

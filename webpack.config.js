@@ -6,19 +6,19 @@ const {UglifyJsPlugin} = webpack.optimize;
 
 const CopyWebpackPlugin = require(`copy-webpack-plugin`);
 const ExtractTextWebpackPlugin = require(`extract-text-webpack-plugin`);
-const configHtmls = require(`webpack-config-htmls`)();
+// const CriticalPlugin = require(`webpack-plugin-critical`).CriticalPlugin;
 
-const CriticalPlugin = require(`webpack-plugin-critical`).CriticalPlugin;
+const configHtmls = require(`webpack-config-htmls`)();
 
 const {getIfUtils, removeEmpty} = require(`webpack-config-utils`);
 const {ifProduction, ifDevelopment} = getIfUtils(process.env.NODE_ENV);
 
 const extractCSS = new ExtractTextWebpackPlugin(`css/style.css`);
+// const criticalCSS = new CriticalPlugin();
 
 // change for production build on different server path
 // const publicPath = `/`;
-const publicPath = `/lennert.blommaert/20162017/ma4/tribute/`;
-
+const publicPath = `/`;
 
 const port = 3000;
 
@@ -176,19 +176,12 @@ const config = {
 
     ifProduction(copy),
     ifProduction(extractCSS),
+    // ifProduction(criticalCSS),
 
     ifProduction(
       new UglifyJsPlugin({
         sourceMap: true,
         comments: false
-      }),
-      new CriticalPlugin({
-        base: `./src/`,
-        src: `index.html`,
-        dest: `css/style.css`,
-        minify: true,
-        width: 1300,
-        height: 900
       })
     )
 

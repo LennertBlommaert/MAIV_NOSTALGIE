@@ -14,8 +14,8 @@ class Harmonium extends Component {
   $visualizer
 
   state = {
-    currentAudio: {},
-    audio: [
+    currentNote: {},
+    notes: [
       {
         id: 1,
         isActive: false,
@@ -69,31 +69,31 @@ class Harmonium extends Component {
 
   handleActivateNote = id => {
 
-    const {audio} = this.state;
+    const {notes} = this.state;
 
-    const pAudioItem = audio.find(a => a.isActive === true);
-    if (pAudioItem) pAudioItem.isActive = !pAudioItem.isActive;
+    const pNote = notes.find(a => a.isActive === true);
+    if (pNote) pNote.isActive = !pNote.isActive;
 
-    const audioItem = audio.find(a => a.id === id);
-    audioItem.isActive = !audioItem.isActive;
+    const note = notes.find(a => a.id === id);
+    note.isActive = !note.isActive;
 
-    audioItem.sound.play();
+    note.sound.play();
 
-    this.setState({audio: audio, currentAudio: audioItem});
+    this.setState({audio: notes, currentNote: note});
 
   }
 
   render() {
 
-    const {audio, currentAudio} = this.state;
+    const {notes, currentNote} = this.state;
 
     return (
       <div>
-        <Staff onActivateNote={this.handleActivateNote} audio={audio} />
+        <Staff onActivateNote={this.handleActivateNote} notes={notes} />
         <div className='harmonium__bg'>
           {
-            currentAudio.name !== undefined ?
-                <CurrentNote note={currentAudio.name} />
+            currentNote.name !== undefined ?
+                <CurrentNote note={currentNote.name} />
             : <div className='harmonium__note'>/</div>
           }
         </div>

@@ -18,11 +18,11 @@ class InfluenceMeterApp extends Component {
       new Artist(`Iggy Pop`, `iggy_pop.jpg`),
       new Artist(`Siouxsie`, `siouxsie_sioux.jpg`),
       new Artist(`Bob Dylan`, `bob_dylan.jpg`),
-      new Artist(`Jim Morrison`, `jim_morrison.jpg`),
+      new Artist(`Morrison`, `jim_morrison.jpg`),
       new Artist(`Iggy Pop`, `iggy_pop.jpg`),
       new Artist(`Siouxsie`, `siouxsie_sioux.jpg`),
       new Artist(`Bob Dylan`, `bob_dylan.jpg`),
-      new Artist(`Jim Morrison`, `jim_morrison.jpg`),
+      new Artist(`Morrison`, `jim_morrison.jpg`),
       new Artist(`Iggy Pop`, `iggy_pop.jpg`),
       new Artist(`Siouxsie`, `siouxsie_sioux.jpg`),
     ]

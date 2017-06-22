@@ -9,15 +9,19 @@ export default $album => {
   const $albumCoverContainer = $album.querySelector(`.album__cover-container`);
   $albumCoverContainer.appendChild(createButtonBackground());
 
+
+  $albumCoverContainer.addEventListener(`click`, e => onAlbumClick(e.currentTarget));
+
   const $svg = $albumCoverContainer.querySelector(`svg`);
   toggleButtonState($svg);
 
 };
 
-const onButtonClick = $svg => {
+const onAlbumClick = $albumCoverContainer => {
 
-  const $audioTag = $svg.parentNode.querySelector(`.album__audio-sample`);
-  const $vinyl = $svg.parentNode.parentNode.parentNode.querySelector(`.album__img-vinyl`);
+  const $audioTag = $albumCoverContainer.querySelector(`.album__audio-sample`);
+  const $vinyl = $albumCoverContainer.parentNode.parentNode.querySelector(`.album__img-vinyl`);
+  const $svg = $albumCoverContainer.querySelector(`svg`);
 
   toggleButtonState($svg, $audioTag.paused);
 
@@ -37,7 +41,6 @@ const createButtonBackground = () => {
   $svg.setAttribute(`width`, 40);
   $svg.setAttribute(`height`, 40);
   $svg.setAttribute(`xmlns`, `http://www.w3.org/2000/svg`);
-  $svg.addEventListener(`click`, e => onButtonClick(e.currentTarget));
 
   const $circle = createElementSVG(`circle`,  {
     r: 20,
