@@ -29,12 +29,12 @@ const init = () => {
     );
   }
 
-  // if (window.innerWidth >= 550) {
-  render(
+  if (window.innerWidth >= 550) {
+    render(
       <HarmoniumApp  />,
       document.querySelector(`.harmoniumApp-react-mount`)
     );
-  //}
+  }
 
   render(
     <InfluenceMeterApp  />,
@@ -61,17 +61,17 @@ const initCases = () => {
   const $cases = document.querySelectorAll(`.case`);
 
   for (let i = 0;i < $cases.length;i ++) {
-    //$cases[i].classList.add(`translated`);
+    $cases[i].classList.add(`translated`);
     imageViewer($cases[i]);
   }
 
-  //animateIn($cases, `revealedX`);
+  animateIn($cases, `revealedX`);
 
   const $caseImgs = document.querySelectorAll(`.case-img`);
 
-  // for (let i = 0;i < $caseImgs.length;i ++) {
-  //   $caseImgs[i].classList.add(`translated`);
-  // }
+  for (let i = 0;i < $caseImgs.length;i ++) {
+    $caseImgs[i].classList.add(`translated`);
+  }
 
   animateIn($caseImgs, `revealedX`);
 };
