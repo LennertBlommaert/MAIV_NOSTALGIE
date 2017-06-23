@@ -48,9 +48,7 @@
     "webpack-config-htmls": "^1.0.1",
     "webpack-config-utils": "^2.3.0",
     "webpack-dev-server": "^2.4.1",
-    "scroll-to-element": "^2.0.0"
-  },
-  "dependencies": {
+    "scroll-to-element": "^2.0.0",
     "critical": "^0.8.4",
     "webpack-plugin-critical": "^1.0.0"
   }
