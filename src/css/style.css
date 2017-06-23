@@ -1240,17 +1240,7 @@ main {
     margin: 0 auto 2rem;
     font: 1.6rem DIN;
     text-transform: uppercase;
-
-    & img {
-      width: 11.5vw;
-      min-width: 10rem;
-      height: inherit;
-    }
   }
-
-  /*&__header {
-    margin: 5vw 0  0 10vw;
-  }*/
 
   &__divider {
     margin-left: 10vw;
@@ -1306,6 +1296,25 @@ main {
     justify-content: center;
     align-items: flex-end;
     margin: .1rem .1rem 0 0;
+    overflow: hidden;
+
+    &:hover {
+
+      &::before {
+        opacity: 0;
+      }
+
+      & img {
+        transform: scale(1.1);
+      }
+    }
+
+    & img {
+      width: 11.5vw;
+      min-width: 10rem;
+      height: inherit;
+      transition: .4s transform ease;
+    }
 
     & span {
       position: absolute;
@@ -1313,6 +1322,14 @@ main {
       color: white;
 
       background: rgba(0, 0, 0, .2);
+    }
+
+    &::before {
+      @apply(--content-before);
+      z-index: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, .3), rgba(255, 97, 116, 1));
+      opacity: .5;
+      transition: .5s opacity ease;
     }
   }
 

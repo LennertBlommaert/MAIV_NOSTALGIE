@@ -50,12 +50,7 @@ const onThumbnailClick = (imgFilename, $case, e) => {
 
   const $thumbnail = e.currentTarget;
 
-  //reset previous selected thumbnails
-  const $thumbnails = $thumbnail.parentNode.querySelectorAll(`.selected`);
-  for (let i = 0;i < $thumbnails.length;i ++) {
-    $thumbnails[i].classList.remove(`selected`);
-  }
-
+  resetPreviousSelectedThumbnails($thumbnail);
 
   $thumbnail.classList.add(`selected`);
 
@@ -65,4 +60,11 @@ const onThumbnailClick = (imgFilename, $case, e) => {
     $img.src = `assets/img/${imgFilename}`;
     $img.classList.add(`revealedX`);
   }));
+};
+
+const resetPreviousSelectedThumbnails = $currentThumbnail => {
+  const $thumbnails = $currentThumbnail.parentNode.querySelectorAll(`.selected`);
+  for (let i = 0;i < $thumbnails.length;i ++) {
+    $thumbnails[i].classList.remove(`selected`);
+  }
 };
