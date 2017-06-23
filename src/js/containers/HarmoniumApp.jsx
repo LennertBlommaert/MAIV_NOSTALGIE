@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import Staff from '../components/Staff';
 import CurrentNote from '../components/CurrentNote';
+import Note from '../models/Note';
 
 /*
   HARMONIUM
@@ -16,54 +17,14 @@ class Harmonium extends Component {
   state = {
     currentNote: {},
     notes: [
-      {
-        id: 1,
-        isActive: false,
-        name: `Do`,
-        sound: new Audio(`assets/audio/do.mp3`),
-      },
-      {
-        id: 2,
-        isActive: false,
-        name: `Re`,
-        sound: new Audio(`assets/audio/re.mp3`),
-      },
-      {
-        id: 3,
-        isActive: false,
-        name: `Mi`,
-        sound: new Audio(`assets/audio/mi.mp3`),
-      },
-      {
-        id: 4,
-        isActive: false,
-        name: `Fa`,
-        sound: new Audio(`assets/audio/fa.mp3`),
-      },
-      {
-        id: 5,
-        isActive: false,
-        name: `Sol`,
-        sound: new Audio(`assets/audio/sol.mp3`),
-      },
-      {
-        id: 6,
-        isActive: false,
-        name: `La`,
-        sound: new Audio(`assets/audio/la.mp3`),
-      },
-      {
-        id: 7,
-        isActive: false,
-        name: `Si`,
-        sound: new Audio(`assets/audio/si.mp3`),
-      },
-      {
-        id: 8,
-        isActive: false,
-        name: `Do`,
-        sound: new Audio(`assets/audio/do2.mp3`),
-      }
+      new Note(1, `DO`, `do.mp3`),
+      new Note(2, `RE`, `re.mp3`),
+      new Note(3, `MI`, `mi.mp3`),
+      new Note(4, `FA`, `fa.mp3`),
+      new Note(5, `SOL`, `sol.mp3`),
+      new Note(6, `LA`, `la.mp3`),
+      new Note(7, `SI`, `si.mp3`),
+      new Note(8, `DO`, `do2.mp3`),
     ]
   }
 
@@ -72,10 +33,10 @@ class Harmonium extends Component {
     const {notes} = this.state;
 
     const pNote = notes.find(a => a.isActive === true);
-    if (pNote) pNote.isActive = !pNote.isActive;
+    if (pNote) pNote.toggleIsActive();
 
     const note = notes.find(a => a.id === id);
-    note.isActive = !note.isActive;
+    note.toggleIsActive();
 
     note.sound.play();
 
