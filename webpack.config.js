@@ -17,8 +17,8 @@ const extractCSS = new ExtractTextWebpackPlugin(`css/style.css`);
 // const criticalCSS = new CriticalPlugin();
 
 // change for production build on different server path
-// const publicPath = `/`;
 const publicPath = `/`;
+// const publicPath = `/lennert.blommaert/20162017/ma4/tribute/`;
 
 const port = 3000;
 

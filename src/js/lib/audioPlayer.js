@@ -9,7 +9,6 @@ export default $album => {
   const $albumCoverContainer = $album.querySelector(`.album__cover-container`);
   $albumCoverContainer.appendChild(createButtonBackground());
 
-
   $albumCoverContainer.addEventListener(`click`, e => onAlbumClick(e.currentTarget));
 
   const $svg = $albumCoverContainer.querySelector(`svg`);

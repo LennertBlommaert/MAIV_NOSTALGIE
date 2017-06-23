@@ -106,14 +106,17 @@ h1 {
     isolation: isolate;
     text-transform: uppercase;
     color: var(--pink);
-    padding: 0 6rem 1.5rem;
+    padding: 0 6rem;
+    height: 12.5rem;
     letter-spacing: 2rem;
     position: relative;
+    display: flex;
+    align-items: center;
 
     &::after {
       position: absolute;
       z-index: -2;
-      top: .8rem;
+      bottom: -4rem;
       left: 6.7rem;
       color: color(#2f1215 a(80%));
       content: attr(data-content);
@@ -1124,9 +1127,9 @@ main {
     }
 
     &.large-v {
-      margin-top: 5rem;
+      margin: 5rem auto 0;
       background: url(../assets/img/glue-9-bg.jpg);
-      width: 100%;
+      width: 80%;
       height: 46rem;
       justify-content: space-around;
       background-size: cover;
@@ -1619,10 +1622,10 @@ main {
 }
 
 @media (width < 1000px) {
-  /*
-  main {
-    margin-top: -5rem;
-  }*/
+
+  .album__container.large-v {
+    width: 100%;
+  }
 
   .story {
 

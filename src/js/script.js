@@ -10,11 +10,13 @@ import audioPlayer from './lib/audioPlayer';
 import sideNav from './lib/sideNav';
 import animateIn from './lib/animateIn';
 import scrollToItem from './lib/scrollToItem';
+import video from './lib/video';
 
 
 const init = () => {
 
   initAutoScroll();
+  video();
   initGlueImages();
   initCases();
   initAlbums();

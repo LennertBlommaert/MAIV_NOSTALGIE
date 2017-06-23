@@ -8,7 +8,6 @@ const onScroll = ($elements, endClassName) => {
   requestAnimationFrame(() => {
 
     $elements.forEach($el => isElementInViewport($el) ? $el.classList.add(endClassName) : null);
-    // $elements.forEach($el => isElementInViewport($el) ? $el.classList.add(endClassName) : $el.classList.remove(endClassName));
 
   });
 };

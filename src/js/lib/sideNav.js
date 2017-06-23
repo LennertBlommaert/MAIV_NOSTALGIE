@@ -63,15 +63,8 @@ const setNavList = () => {
     const $li = document.createElement(`li`);
     $li.addEventListener(`click`, () => handleCaseClick(c.name));
 
-    const $img = document.createElement(`img`);
-    $img.setAttribute(`src`, `assets/img/${c.imgFilename}`);
-    $img.setAttribute(`width`, 45);
-    $img.setAttribute(`height`, 45);
-    $li.appendChild($img);
-
-    const $span = document.createElement(`span`);
-    $span.innerHTML = c.name;
-    $li.appendChild($span);
+    $li.appendChild(createImg(c));
+    $li.appendChild(createSpan(c));
 
     $li.classList.add(c.name);
     $li.classList.add(`story__nav-list-item`);
@@ -79,6 +72,20 @@ const setNavList = () => {
     $sideNavList.appendChild($li);
   });
 
+};
+
+const createImg = c => {
+  const $img = document.createElement(`img`);
+  $img.setAttribute(`src`, `assets/img/${c.imgFilename}`);
+  $img.setAttribute(`width`, 45);
+  $img.setAttribute(`height`, 45);
+  return $img;
+};
+
+const createSpan = c => {
+  const $span = document.createElement(`span`);
+  $span.innerHTML = c.name;
+  return $span;
 };
 
 const setCurrentCase = () => {
@@ -92,9 +99,7 @@ const setCurrentCase = () => {
   resetNavListItems();
 
   if (currentCase) $sideNavList.querySelector(`.${currentCase.name}`).classList.add(`active`);
-  // if (currentCase) $sidenav.innerHTML += currentCase.name;
 
-  //console.log(currentCase);
 };
 
 const resetNavListItems = () => {
